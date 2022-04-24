@@ -56,7 +56,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:clickable="false"
-            android:hint="Edit your Profile Here"
+            android:hint="Edit Profile Here"
             android:inputType="textNoSuggestions"
             android:maxLines="1"
             android:paddingStart="5dp"
@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Last name"
+                android:hint="Last Name"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:paddingStart="5dp"
@@ -121,37 +121,45 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-20dp">
             <!-- Text Label -->
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:layout_marginBottom="5dp"
-                android:text="Sex:"
-                android:textSize="20sp" />
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="25dp"
 
-            <!-- Spinner Element -->
+                    android:text="Gender:"
+                    android:textSize="20sp" />
 
-            <Spinner
-                android:id="@+id/edit_sex"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:entries="@array/sex" />
-
-
-            <TextView
+                <!-- Spinner Element -->
+                <Spinner
+                    android:id="@+id/sex"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:entries="@array/sex" />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dip"
-                android:layout_marginBottom="5dp"
-                android:text="Barangay:"
-                android:textSize="20sp" />
+                android:layout_height="match_parent">
 
-            <!-- Spinner Element -->
-            <Spinner
-                android:id="@+id/edit_barangay"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:entries="@array/barangay" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Barangay:"
+                    android:textSize="20sp" />
+
+                <!-- Spinner Element -->
+                <Spinner
+                    android:id="@+id/barangay"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:entries="@array/barangay" />
+            </LinearLayout>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -221,6 +229,7 @@
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
 
             android:text="Save Changes"
             android:textColor="@android:color/white"
@@ -233,7 +242,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:clickable="false"
-            android:hint="Update your Password"
+            android:hint="Update Password"
             android:inputType="textNoSuggestions"
             android:maxLines="1"
             android:paddingStart="5dp"

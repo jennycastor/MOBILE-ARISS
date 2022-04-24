@@ -22,7 +22,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
             android:src="@drawable/ic_profile"
-            app:civ_border_color="#FF3131"
+            app:civ_border_color="#FF8A80"
             app:civ_border_width="4dp" />
 
         <TextView
@@ -46,8 +46,8 @@
             android:insetBottom="0dp"
             android:layout_gravity="left"
             app:icon="@drawable/ic_baseline_edit_24"
-            app:iconTint="@color/cardview_light_background"
-            android:backgroundTint="#FF7144"
+            app:iconTint="@color/white"
+            android:backgroundTint="#FF8A80"
             app:iconSize="28dp"
             app:iconGravity="textTop"
             app:iconPadding="0dp"

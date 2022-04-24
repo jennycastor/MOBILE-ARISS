@@ -10,8 +10,8 @@
         android:id="@+id/UserName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
         android:hint="Name"
         android:inputType="textPersonName" />
 
@@ -51,14 +51,15 @@
 
     <Button
         android:id="@+id/SubmitFeedback"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="450dp"
-        android:background="@color/black"
+        android:backgroundTint="@color/aris"
         android:elevation="4dp"
-        android:paddingLeft="70dp"
-        android:paddingRight="70dp"
+        android:gravity="center"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+
         android:text="Submit"
         android:textColor="#fff" />
 </RelativeLayout>

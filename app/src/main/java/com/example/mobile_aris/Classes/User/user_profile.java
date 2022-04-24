@@ -46,7 +46,6 @@ public class user_profile extends AppCompatActivity {
 
         SharedPreferences info = getSharedPreferences("user_info", MODE_PRIVATE);
 
-
         String av = info.getString("profile_url", "").toString();
         String qr = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + info.getString("_id" , "").toString();
         String fn = info.getString("firstname","").toString();
@@ -82,13 +81,11 @@ public class user_profile extends AppCompatActivity {
         phone = (TextView) findViewById(R.id.UserPhoneNumber);
         phone.setText(pn);
 
-
         updateprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent ( user_profile.this, update_profile.class);
                 startActivity(intent);
-
             }
         });
 
@@ -106,7 +103,6 @@ public class user_profile extends AppCompatActivity {
                 builder.show();
             }
         });
-
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -136,8 +132,6 @@ public class user_profile extends AppCompatActivity {
                 return false;
             }
         });
-
-
     }
 
 
@@ -175,8 +169,7 @@ public class user_profile extends AppCompatActivity {
                 startActivity(intent1);
                 finish();
                 break;
-
-
+                
         }
         return super.onOptionsItemSelected(item);
     }
