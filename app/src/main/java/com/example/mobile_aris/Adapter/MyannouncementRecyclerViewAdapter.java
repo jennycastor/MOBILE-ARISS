@@ -46,6 +46,7 @@ public class MyannouncementRecyclerViewAdapter extends RecyclerView.Adapter<Myan
         holder.txtTitle.setText(mValues.get(position).getTitle());
         holder.txtDate.setText(mValues.get(position).getDate());
         holder.txtDesc.setText(mValues.get(position).getDesc());
+        holder.txtAuthor.setText(mValues.get(position).getAuthor());
     }
 
     @Override
@@ -55,13 +56,14 @@ public class MyannouncementRecyclerViewAdapter extends RecyclerView.Adapter<Myan
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public announcementModel mItem;
-        TextView txtTitle, txtDesc, txtDate;
+        TextView txtTitle, txtDesc, txtDate,txtAuthor;
 
         public ViewHolder(FragmentItemBinding binding) {
             super(binding.getRoot());
             txtTitle = binding.txtTitle;
             txtDate = binding.Posted;
             txtDesc = binding.Content;
+            txtAuthor=binding.Author;
         }
 
     }

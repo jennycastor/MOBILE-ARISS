@@ -85,7 +85,7 @@ public class update_profile extends AppCompatActivity implements View.OnClickLis
     private EditText edit_new_password;
     private EditText edit_birthday, edit_birthday_user;
     private ImageView edit_avatar, edit_qr, edit_user_avatar;
-
+    SharedPreferences info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,7 @@ public class update_profile extends AppCompatActivity implements View.OnClickLis
         setListeners();
 
 
-        SharedPreferences info = getSharedPreferences("user_info",MODE_PRIVATE);
+       info = getSharedPreferences("user_info",MODE_PRIVATE);
         token= info.getString("access_token","");
 
                 String av_d = info.getString("profile_url", "").toString();
@@ -298,7 +298,7 @@ public class update_profile extends AppCompatActivity implements View.OnClickLis
                 String pub_id = info.getString("public_id", "").toString();
                 String prof_url = info.getString("profile_url", "").toString();
                 String pass = info.getString("password", " ").toString();
-                final String URLUpdate = "http://192.168.100.32:5000/api/user/auth/update_profile/" + user_id;
+                final String URLUpdate = "https://aris-backend.herokuapp.com/api/user/auth/update_profile/" + user_id;
 //                String pass1, pass2;
 //                pass1 = edit_new_password.getText().toString();
 //                pass2 = edit_confirm_password.getText().toString();
@@ -317,6 +317,7 @@ public class update_profile extends AppCompatActivity implements View.OnClickLis
 
                 Log.d(TAG, ": " + " button clicked");
                 if (imagePath != null) {
+                    Log.d("image","maylaman");
                     MediaManager.get().upload(imagePath).callback(new UploadCallback() {
                         @Override
                         public void onStart(String requestId) {
@@ -338,8 +339,8 @@ public class update_profile extends AppCompatActivity implements View.OnClickLis
                                 if (resultData != null) {
                                     SharedPreferences remember = getApplication().getApplicationContext().getSharedPreferences("user_info", Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = remember.edit();
-                                    jo.put("url", resultData.get("secure_url"));
-                                    jo.put("public_id", resultData.get("public_id"));
+                                    jo.put("url", resultData.get("secure_url").toString());
+                                    jo.put("public_id", resultData.get("public_id").toString());
                                     editor.putString("profile_url", resultData.get("secure_url").toString());
                                     editor.putString("public_id", resultData.get("public_id").toString());
                                     editor.apply();

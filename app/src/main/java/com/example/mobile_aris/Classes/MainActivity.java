@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView mcount, fcount, cc1,cc2,cc3, barcount;
+    SharedPreferences remember;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
         CardView Export_card, bar_card;
-
+        remember = getSharedPreferences("user_info", Context.MODE_PRIVATE);
         getGCount();
         getCCount();
         getBCount();
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        SharedPreferences remember = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+
         SharedPreferences.Editor editor = remember.edit();
         switch (item.getItemId()){
             case R.id.contact_form:

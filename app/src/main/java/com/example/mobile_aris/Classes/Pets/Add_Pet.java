@@ -201,7 +201,7 @@ public class Add_Pet extends AppCompatActivity implements View.OnClickListener{
 
                 RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                        "http://192.168.100.32:5000/api/pet/add", jo, new Response.Listener<JSONObject>() {
+                        "https://aris-backend.herokuapp.com/api/pet/add", jo, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("token", token);
@@ -250,7 +250,7 @@ public class Add_Pet extends AppCompatActivity implements View.OnClickListener{
         }
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                "http://192.168.100.32:5000/api/petadd/vaxx-detail", jo, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/petadd/vaxx-detail", jo, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d("Vaxx", "Added Successfully");

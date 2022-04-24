@@ -60,6 +60,13 @@ public class announcement extends AppCompatActivity {
                         announcementModel.setDate(jsonObject.getString("date"));
                         announcementModel.setDesc(jsonObject.getString("desc"));
                         announcementModel.setTitle(jsonObject.getString("title"));
+                        JSONArray clinic_name=jsonObject.getJSONArray("clinic");
+                        if(clinic_name.length()>0){
+                            JSONObject clinic_detail=clinic_name.getJSONObject(0);
+                            announcementModel.setAuthor(clinic_detail.getString("name"));
+                        }else{
+                            announcementModel.setAuthor("Null");
+                        }
                         annoucements.add(announcementModel);
                     }
 

@@ -1,5 +1,7 @@
 package com.example.mobile_aris.Classes;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -30,7 +32,7 @@ public class barcount extends AppCompatActivity {
     RecyclerView recyclerView;
     BarcountAdapter rhAdapter;
     ArrayList<barcountModel> hreports = new ArrayList<barcountModel>();
-
+    SharedPreferences remember;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcount);
@@ -39,10 +41,10 @@ public class barcount extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         rhAdapter = new BarcountAdapter(getApplicationContext());
         recyclerView.setAdapter(rhAdapter);
-
+        remember = getSharedPreferences("user_info", Context.MODE_PRIVATE);
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/analytics/get/barangayCount", null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/analytics/get/barangayCount", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
@@ -80,7 +82,7 @@ public class barcount extends AppCompatActivity {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Authorization",
-                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzE2M2Q0MjU5ZDhkOTE2NTg4MTE3NiIsImlhdCI6MTY0OTI0NTIyOSwiZXhwIjoxNjQ5Njc3MjI5fQ.Ia5trMMzwuux8ioa9fYtfkFEmMGtJb4OZftvwTJCraI");
+                        "Bearer "+remember.getString("access_token","").toString());
                 return params;
             }
         };

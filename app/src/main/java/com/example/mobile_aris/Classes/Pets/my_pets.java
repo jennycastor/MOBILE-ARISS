@@ -171,7 +171,7 @@ public class my_pets extends AppCompatActivity implements MypetRecyclerViewAdapt
 
     private void parseJSON() {
         mExampleList.clear();
-        String url = "http://192.168.100.32:5000/api/pet/";
+        String url = "https://aris-backend.herokuapp.com/api/pet/";
 
         JSONObject ji = new JSONObject();
         try {
@@ -258,7 +258,7 @@ public class my_pets extends AppCompatActivity implements MypetRecyclerViewAdapt
 
     private void VaxxDet() {
         mExampleList.clear();
-        String url = "http://192.168.100.32:5000/api/pet/";
+        String url = "https://aris-backend.herokuapp.com/api/pet/";
 
         JSONObject ji = new JSONObject();
         try {

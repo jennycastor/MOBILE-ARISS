@@ -197,7 +197,7 @@ public class edit_pet extends AppCompatActivity implements View.OnClickListener 
             petId = pet.getString("p_id", "");
             petImage = pet.getString("image", "");
             pubId = pet.getString("pubId", "");
-            final String URLUpdate = "http://192.168.100.32:5000/api/pet/update/" + petId;
+            final String URLUpdate = "https://aris-backend.herokuapp.com/api/pet/update/" + petId;
 
             Log.d(TAG, ": " + " button clicked");
             if (imagePath != null) {

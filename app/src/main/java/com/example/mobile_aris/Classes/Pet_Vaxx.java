@@ -99,7 +99,7 @@ public class Pet_Vaxx extends AppCompatActivity {
         Log.d("Token1", token);
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/pet/" + id, null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/pet/" + id, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {

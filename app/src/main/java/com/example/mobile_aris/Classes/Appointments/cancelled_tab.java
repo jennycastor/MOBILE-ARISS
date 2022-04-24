@@ -161,7 +161,7 @@ public class cancelled_tab extends AppCompatActivity implements CancelledAdapter
 
     private void parseJSON() {
         mExampleList.clear();
-        String url = "http://192.168.100.32:5000/api/appointments/get/my-appointments";
+        String url = "https://aris-backend.herokuapp.com/api/appointments/get/my-appointments";
 
         JSONObject ji = new JSONObject();
         try {
