@@ -58,7 +58,7 @@
                     android:layout_height="50dp"
                     android:layout_margin="20dp"
                     android:layout_gravity="center"
-                    android:background="#2a7ee6"
+                    android:backgroundTint="@color/aris"
                     android:text="Reset Password"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
@@ -73,9 +73,10 @@
                     android:layout_gravity="right"
                     android:clickable="true"
                     android:text="Remember your password?"
-                    android:textColor="@android:color/holo_blue_light"
-                    android:textStyle="bold" />
-
+                    android:textColor="@android:color/black"
+                    android:textColorLink="@color/aris"
+                    android:textStyle="bold"
+                    />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

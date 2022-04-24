@@ -22,7 +22,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="175dp"
                 android:gravity="left"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp"
@@ -59,7 +59,7 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
-                                android:text="Gender Count"
+                                android:text="Exposures by Gender"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -71,7 +71,7 @@
                                 android:layout_marginLeft="65dp"
                                 android:layout_marginTop="10dp"
                                 android:text="Male"
-                                android:textColor="@color/purple_200"
+                                android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
@@ -92,7 +92,7 @@
                                 android:layout_marginTop="-77dp"
                                 android:layout_marginRight="53dp"
                                 android:text="Female"
-                                android:textColor="@color/purple_200"
+                                android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
@@ -146,8 +146,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Announcement"
+                        android:layout_marginTop=".30dp"
+                        android:text="Announcements"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="20dp"
@@ -214,7 +214,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="224dp"
+                android:layout_height="240dp"
                 android:layout_gravity="left"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="-413dp"
@@ -230,7 +230,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="-85dp"
-                    android:text="Category Count"
+                    android:text="Exposures by Category"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -242,7 +242,7 @@
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="48dp"
                     android:text="Cat. 1"
-                    android:textColor="@color/purple_200"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -263,7 +263,7 @@
                     android:layout_marginTop="48dp"
                     android:layout_marginRight="55dp"
                     android:text="Cat. 2"
-                    android:textColor="@color/purple_200"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -284,7 +284,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
                     android:text="Cat. 3"
-                    android:textColor="@color/purple_200"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 

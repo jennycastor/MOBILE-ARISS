@@ -45,8 +45,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/back"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:backgroundTint="#00FFFFFF"
         android:drawableStart="@drawable/ic_baseline_west_24"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />

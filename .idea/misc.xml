@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_about_aris.xml" value="0.33" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_add_pets.xml" value="0.32083333333333336" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_announcement.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_appointments.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_barcount.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_bite_case_file.xml" value="0.32083333333333336" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_bite_cases.xml" value="0.32083333333333336" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_clinics.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_completed_tab.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_contact_form.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_edit_pet.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_edit_vaxx.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_health_report.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_login_and_sign_up.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_login_user.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_my_pets.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_pending_tab.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_pet_profile.xml" value="0.32083333333333336" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_register_user.xml" value="0.33" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_set_appointment.xml" value="0.33" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_update_profile.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/activity_user_profile.xml" value="0.38645833333333335" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/add_vaccine_status.xml" value="0.32083333333333336" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/barcount.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/bite_layout.xml" value="0.5" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/bite_recycle.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/cancelled_activity_detail.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/completed_activity_detail.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/forgot_pass.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/fragment_item.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/fragment_item2.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/fragment_item_list.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/fragment_item_list2.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/fragment_vacstat.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/healt_card.xml" value="0.32083333333333336" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/pet_activity_detail.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/layout/qr_code.xml" value="0.32083333333333336" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/menu/main.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/menu/menu_main.xml" value="0.3875" />
+        <entry key="..\:/MOBILE-ARISS/app/src/main/res/menu/profile_menu.xml" value="0.3875" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
