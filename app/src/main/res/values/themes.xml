@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MOBILEARIS" parent="Theme.Material3.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_200</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#FF003B</item>
+        <item name="colorSecondaryVariant">#E91E63</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">#FFFFFF</item>
+        <!-- Customize your theme here. -->
+
+
+    </style>
+    <style name="TextAppearance.Material3.ActionBar.Title" parent="@android:style/TextAppearance">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">casual</item>
+    </style>
+    <style name="Base.Widget.Material3.ActionBar.Solid." parent="Base.Widget.Material3.ActionBar.Solid." tools:ignore="ResourceCycle">
+        <item name="backgroundColor">#FFFFFF</item>
+    </style>
+
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <!-- textColor. -->
+        <item name="android:textColorPrimary">#000</item>
+        <!-- background Color. -->
+        <item name="android:background">#fff</item>
+        <item name="cornerRadius">35dp</item>
+    </style>
+
+</resources>

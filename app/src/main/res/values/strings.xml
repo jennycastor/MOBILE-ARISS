@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">MOBILE-ARIS</string>
+
+    <string name="select">Select Breed</string>
+
+    <string-array name="petsex">
+        <item>Select Sex</item>
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="petspecies">
+        <item>Select Specie</item>
+        <item>Dog</item>
+        <item>Cat</item>
+    </string-array>
+
+    <string-array name="dogbreeds">
+        <item>Select Breed</item>
+        <item>Beagle</item>
+        <item>Poodle</item>
+        <item>Pug</item>
+        <item>Golden Retriever</item>
+        <item>Dalmatian</item>
+        <item>Shih Tzu</item>
+        <item>Chihuahua</item>
+        <item>German Shepherd</item>
+        <item>Doberman Pinscher</item>
+        <item>Labrador Retriever</item>
+    </string-array>
+
+    <string-array name="catbreeds">
+        <item>Devon Rex Cats</item>
+        <item> Abyssinian Cats</item>
+        <item>Sphynx Cats</item>
+        <item>Scottish Fold Cats</item>
+        <item>American Shorthair Cats</item>
+        <item>Maine Coon Cats</item>
+        <item>Persian Cats</item>
+        <item>British Shorthair</item>
+        <item>Ragdoll Cats</item>
+        <item>Exotic Shorthair Cats</item>
+    </string-array>
+
+    <string name="url">https://aris-backend.herokuapp.com/api/</string>
+
+    <string-array name="sex">
+        <item>Select Sex</item>
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="barangay">
+        <item>Select Barangay</item>
+        <item>Bagumbayan</item>
+        <item>Bambang</item>
+        <item>Calzada</item>
+        <item>Central Bicutan</item>
+        <item>Signal Village</item>
+        <item>Fort Bonifacio</item>
+        <item>Hagonoy</item>
+        <item>Ibayo-Tipas</item>
+        <item>Katuparan</item>
+        <item>Ligid-Tipas</item>
+        <item>Lower Bicutan</item>
+        <item>Maharlika Village</item>
+        <item>Napindan</item>
+        <item>New Lower Bicutan</item>
+        <item>North Daang hari</item>
+        <item>North Signal Village</item>
+        <item>Paglingon</item>
+        <item>Pinagsama</item>
+        <item>San Miguel</item>
+        <item>Santa Ana</item>
+        <item>South Daang Hari</item>
+        <item>South Signal Village</item>
+        <item>Tanyag</item>
+        <item>Tuktukan</item>
+        <item>Upper Bicutan</item>
+        <item>Ususan</item>
+        <item>Wawa</item>
+        <item>Western Bicutan</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

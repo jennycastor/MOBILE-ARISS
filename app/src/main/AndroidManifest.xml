@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobile_aris">
+    <!--storage-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+
+    <!--internet access-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.MOBILEARIS">
+        <activity
+            android:name=".Classes.User.forgotpass"
+            android:label="Forgot/Reset Password" />
+        <activity
+            android:name=".Classes.Appointments.Pending"
+            android:label="Pending/Ongoing Appointments" />
+        <activity
+            android:name=".Details.PendingDetailActivity"
+            android:label="Pending Detail Activity" />
+        <activity
+            android:name=".models.set_appointment"
+            android:label="Set Appointments" />
+        <activity
+            android:name=".Classes.Appointments.cancelled_tab"
+            android:label="Cancelled Appointments" />
+        <activity
+            android:name=".Classes.Appointments.completed_tab"
+            android:label="Completed Appointments" />
+        <activity
+            android:name=".Classes.clinics"
+            android:exported="false" />
+        <activity
+            android:name=".Classes.about_aris"
+            android:label="About ARIS" />
+        <activity
+            android:name=".Classes.contact_form"
+            android:label="Contact ARIS" />
+<!--        <activity-->
+<!--            android:name=".register_user"-->
+<!--            android:label="Register" />-->
+<!--        <activity-->
+<!--            android:name=".login_user"-->
+<!--            android:label="Login" />-->
+        <activity
+            android:name=".Classes.Pets.edit_pet"
+            android:label="Edit Pet" />
+        <activity
+            android:name=".Classes.barcount"
+            android:label="Barangay Count" />
+        <activity
+            android:name=".Classes.edit_vaxx"
+            android:label="Edit Pet Vaxx" />
+        <activity
+            android:name=".Classes.Pets.pet_profile"
+            android:label="Pet Profile" />
+        <activity
+            android:name=".Classes.Pets.Add_Pet"
+            android:label="Add Pet" />
+        <activity
+            android:name=".Classes.Pet_Vaxx"
+            android:label="Vaccine Status" />
+        <activity
+            android:name=".Classes.health_report"
+            android:label="Health Report" />
+        <activity
+            android:name=".Classes.bite_case_file"
+            android:label="Bite Case Detail" />
+        <activity
+            android:name=".Classes.User.update_profile"
+            android:label="Update Profile" />
+        <activity
+            android:name=".Classes.announcement"
+            android:label="Announcement"
+            />
+        <activity
+            android:name=".Classes.Pets.my_pets"
+            android:label="My Pets" />
+        <activity android:name=".Details.PetDetailActivity"></activity>
+        <activity
+            android:name=".Classes.User.user_profile"
+            android:label="My Profile" />
+        <activity
+            android:name=".bites.bite_cases"
+            android:label="Bite Cases" />
+        <activity
+            android:name=".Details.BiteDetailActivity"
+            android:label="Bite Details" />
+        <activity
+            android:name=".Classes.CompletedDetailActivity"
+            android:label="Completed Details" />
+        <activity
+            android:name=".Classes.CancelledDetailActivity"
+            android:label="Cancelled Details" />
+        <activity
+            android:name=".Classes.Appointments.Appointments"
+            android:label="Appointments" />
+        <activity
+            android:name=".Classes.MainActivity"
+            android:exported="true"
+            android:label="Home"/>
+
+        <activity
+            android:name=".Authentication.LoginAndSignUp"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="CLOUDINARY_URL"
+            android:value="cloudinary://431421295175674:XVMqWc4_gz3dhBrfxN7InQLPRpg"
+            />
+    </application>
+
+</manifest>

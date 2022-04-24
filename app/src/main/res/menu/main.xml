@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/about_aris"
+        android:orderInCategory="100"
+        android:title="About ARIS"
+        android:iconTint="@color/black"
+        android:icon="@android:drawable/ic_menu_info_details"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/contact_form"
+        android:orderInCategory="100"
+        android:title="Contact ARIS"
+        app:showAsAction="never" />
+</menu>

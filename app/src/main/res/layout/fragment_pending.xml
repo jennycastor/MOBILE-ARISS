@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#FFFFFF"
+    android:layout_margin="13dp"
+    android:paddingTop="15dp"
+    app:cardCornerRadius="18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:text="Appointment"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/app_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="40dp"
+                android:layout_marginTop="10dp"
+                android:text="Date:"
+                />
+
+            <TextView
+                android:id="@+id/app_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="40dp"
+                android:layout_marginTop="10dp"
+                android:text="Time Slot:"
+                />
+
+            <TextView
+                android:id="@+id/app_purpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:text="Purpose:"
+                />
+
+            <TextView
+                android:id="@+id/app_status"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="40dp"
+                android:layout_marginTop="10dp"
+                android:text="Status:"
+                />
+
+            <TextView
+                android:id="@+id/app_clinic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Clinic:"
+                />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteApp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:text="Cancel"
+            android:backgroundTint="#FF1E0E"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp" />
+
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>

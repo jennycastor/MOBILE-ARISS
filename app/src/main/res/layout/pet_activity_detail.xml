@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:elevation="15dp"
+    app:cardCornerRadius="12dp"
+    tools:context="com.example.mobile_aris.Details.PetDetailActivity">
+
+    <!-- Circular Image View  -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_view_detail"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_color="#F41A1A"
+        app:civ_border_width="4dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="198dp"
+            android:textAlignment="center"
+            android:text="Pet Name"
+            android:maxLines="1"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:paddingStart="5dp"
+            android:textColor="@color/black"
+             />
+
+        <!-- Text Label -->
+        <TextView
+            android:id="@+id/text_view_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Sex:"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/specie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="Specie:"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="10dp"
+
+            android:text="Age in Months:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+             />
+
+
+        <TextView
+            android:id="@+id/breed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="360dp"
+            android:layout_marginLeft="10dp"
+            android:text="Breed:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+             />
+
+
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginBottom="80dp"
+        android:text="Color:"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/vacStat"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="15dp"
+        android:background="#2a7ee6"
+        android:layout_gravity="bottom|center"
+        android:text="Vaccine Status"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_baseline_west_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+</androidx.cardview.widget.CardView>

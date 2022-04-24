@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#FFF7F7"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:elevation="35dp"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/vaccine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Vaccine Name"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/vacDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Date of Vaccination"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="left"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/revacSched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Revaccination Schedule"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="left"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="22dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editVaxx"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:layout_gravity="left"
+            app:icon="@drawable/ic_baseline_edit_24"
+            app:iconTint="@color/cardview_light_background"
+            android:backgroundTint="#FF7144"
+            app:iconSize="28dp"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addVaxxx"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="-55dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:layout_gravity="center"
+            app:icon="@drawable/ic_baseline_add_24"
+            app:iconTint="@color/cardview_light_background"
+            android:backgroundTint="#2196F3"
+            app:iconSize="28dp"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteVaxx"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="-55dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:layout_gravity="right"
+            app:icon="@drawable/ic_baseline_delete_24"
+            app:iconTint="@color/cardview_light_background"
+            app:iconSize="28dp"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp" />
+
+        <TextView
+            android:id="@+id/vacId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="-200dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            android:text="Created At: " />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Classes.MainActivity"
+    android:orientation="vertical"
+    android:background="#ededed">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <!--            <Button-->
+            <!--                android:id="@+id/SetAppointment"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center_vertical|center_horizontal"-->
+            <!--                android:text="Set Appointment" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pending_card"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#FCEAF0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <!--                        <ImageView-->
+                        <!--                            android:layout_width="64dp"-->
+                        <!--                            android:layout_height="64dp"-->
+                        <!--                            android:background="@drawable/side_nav_bar"-->
+                        <!--                            android:padding="10dp"-->
+                        <!--                            android:src="@drawable/side_nav_bar" />-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawableStart="@drawable/ic_baseline_pending_actions_24"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"
+                            android:textStyle="bold" />
+
+                        <!--                        <TextView-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="10dp"-->
+                        <!--                            android:text="View all pending and Ongoing Appointments"-->
+                        <!--                            android:textColor="@color/black"-->
+                        <!--                            android:textSize="17sp"-->
+                        <!--                            android:textStyle="bold" />-->
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/completed_card"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="#FCEAF0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <!--                        <ImageView-->
+                        <!--                            android:layout_width="64dp"-->
+                        <!--                            android:layout_height="64dp"-->
+                        <!--                            android:background="@drawable/side_nav_bar"-->
+                        <!--                            android:padding="10dp"-->
+                        <!--                            android:src="@drawable/side_nav_bar" />-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawableStart="@drawable/ic_baseline_checklist_24"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <!--                        <TextView-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="10dp"-->
+                        <!--                            android:text="View all completed Appointments"-->
+                        <!--                            android:textColor="@color/black"-->
+                        <!--                            android:textSize="17sp"-->
+                        <!--                            android:textStyle="bold" />-->
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cancelled_card"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="#FCEAF0">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <!--                        <ImageView-->
+                        <!--                            android:layout_width="64dp"-->
+                        <!--                            android:layout_height="64dp"-->
+                        <!--                            android:background="@drawable/side_nav_bar"-->
+                        <!--                            android:padding="10dp"-->
+                        <!--                            android:src="@drawable/side_nav_bar" />-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawableStart="@drawable/ic_baseline_cancel_24" />
+
+                        <!--                        <TextView-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="10dp"-->
+                        <!--                            android:text="View all cancelled appointments"-->
+                        <!--                            android:textColor="@color/black"-->
+                        <!--                            android:textSize="17sp"-->
+                        <!--                            android:textStyle="bold" />-->
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:clipToPadding="false"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="horizontal">-->
+
+            <!--                <androidx.cardview.widget.CardView-->
+            <!--                    android:id="@+id/completed_card"-->
+            <!--                    android:layout_width="150dp"-->
+            <!--                    android:layout_height="45dp"-->
+            <!--                    android:layout_margin="10dp"-->
+            <!--                    android:clickable="true"-->
+            <!--                    android:focusable="true"-->
+            <!--                    android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                    app:cardBackgroundColor="#FCEAF0">-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:gravity="center"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:layout_width="64dp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:layout_height="64dp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:background="@drawable/side_nav_bar"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:padding="10dp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:src="@drawable/side_nav_bar" />&ndash;&gt;-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:text="COMPLETED"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="14dp"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        &lt;!&ndash;                        <TextView&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:layout_marginTop="10dp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:text="View all completed Appointments"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:textColor="@color/black"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:textSize="17sp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:textStyle="bold" />&ndash;&gt;-->
+
+            <!--                    </LinearLayout>-->
+            <!--                </androidx.cardview.widget.CardView>-->
+
+
+            <!--            </LinearLayout>-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:clipToPadding="false"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="horizontal">-->
+
+            <!--                <androidx.cardview.widget.CardView-->
+            <!--                    android:id="@+id/cancelled_card"-->
+            <!--                    android:layout_width="340dp"-->
+            <!--                    android:layout_height="150dp"-->
+            <!--                    android:layout_margin="10dp"-->
+            <!--                    android:clickable="true"-->
+            <!--                    android:focusable="true"-->
+            <!--                    android:foreground="?android:attr/selectableItemBackground"-->
+            <!--                    app:cardBackgroundColor="#FCEAF0">-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="match_parent"-->
+            <!--                        android:gravity="center"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        &lt;!&ndash;                        <ImageView&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:layout_width="64dp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:layout_height="64dp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:background="@drawable/side_nav_bar"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:padding="10dp"&ndash;&gt;-->
+            <!--                        &lt;!&ndash;                            android:src="@drawable/side_nav_bar" />&ndash;&gt;-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_marginTop="10dp"-->
+            <!--                            android:text="CANCELLED"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="32sp"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_marginTop="10dp"-->
+            <!--                            android:text="View all cancelled appointments"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="17sp"-->
+            <!--                            android:textStyle="bold" />-->
+
+            <!--                    </LinearLayout>-->
+            <!--                </androidx.cardview.widget.CardView>-->
+
+
+            <!--            </LinearLayout>-->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/SetAppointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/purple_200"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+
+        app:itemBackground="@color/white"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_main"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#FFFFFF"
+    android:layout_margin="8dp"
+    android:elevation="15dp"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Circular Image View  -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_view"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/ic_profile"
+            app:civ_border_color="#FF3131"
+            app:civ_border_width="4dp" />
+
+        <TextView
+            android:id="@+id/text_view_creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Pet Name"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="25dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editPet"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:layout_gravity="left"
+            app:icon="@drawable/ic_baseline_edit_24"
+            app:iconTint="@color/cardview_light_background"
+            android:backgroundTint="#FF7144"
+            app:iconSize="28dp"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deletePet"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-50dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:layout_gravity="right"
+            app:icon="@drawable/ic_baseline_delete_24"
+            app:iconTint="@color/cardview_light_background"
+            app:iconSize="28dp"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            android:layout_marginTop="-270dp"
+            android:layout_marginRight="120dp"
+            android:text="Created At: " />
+
+        <TextView
+            android:id="@+id/pid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            android:layout_marginTop="-270dp"
+            android:layout_marginRight="120dp"
+            android:text="petid: " />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

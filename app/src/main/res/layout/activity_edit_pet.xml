@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.mobile_aris.Classes.Pets.my_pets">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+    <!-- Circular Image View  -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_view_detail"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_profile"
+        app:civ_border_color="#F41A1A"
+        app:civ_border_width="4dp" />
+
+    <TextView
+        android:id="@+id/hint2"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginTop="-55dp"
+        android:clickable="false"
+        android:hint="Click to Change Image"
+        android:inputType="textNoSuggestions"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+        android:textColor="#FF1414"
+        android:textStyle="bold" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/petId"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:clickable="false"-->
+<!--                android:hint="petId"-->
+<!--                android:inputType="textNoSuggestions"-->
+<!--                android:maxLines="1"-->
+<!--                android:visibility="invisible"-->
+<!--                android:paddingStart="5dp"-->
+<!--                android:singleLine="true"-->
+<!--                android:textColor="#FF1414"-->
+<!--                android:textStyle="bold" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/text_view_creator_detail"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:text="Pet Name"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:textColor="@android:color/black"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:textSize="25dp" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <EditText
+            android:id="@+id/editname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:hint="Pet Name"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:paddingStart="5dp"
+            android:singleLine="true"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdown_menuError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <!-- Text Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:layout_marginBottom="5dp"
+            android:text="Sex:"
+            android:textSize="20sp" />
+
+        <!-- Spinner Element -->
+        <Spinner
+            android:id="@+id/text_view_gender"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:popupBackground="#FFFFFF"
+            android:entries="@array/petsex" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="-81dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="106dp"
+            android:text="Specie:"
+            android:textSize="20sp" />
+
+        <!-- Spinner Element -->
+        <Spinner
+            android:id="@+id/specie"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-2dp"
+            android:layout_gravity="right"
+            android:popupBackground="#FFFFFF"
+            android:entries="@array/petspecies" />
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Age in Months"
+            android:inputType="number"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingStart="5dp"
+            android:singleLine="true"
+            android:layout_marginTop="20dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lnameError4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-35dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
+
+        <EditText
+            android:id="@+id/breed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Breed"
+            android:minHeight="48dp"
+            android:paddingStart="5dp"
+            android:singleLine="true"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameError2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <EditText
+            android:id="@+id/color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Color"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingStart="5dp"
+            android:singleLine="true"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/updatePet"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="15dp"
+
+        android:text="Save Changes"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
