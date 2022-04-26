@@ -44,6 +44,12 @@
         <entry key="..\:/MOBILE-ARISS/app/src/main/res/menu/main.xml" value="0.3875" />
         <entry key="..\:/MOBILE-ARISS/app/src/main/res/menu/menu_main.xml" value="0.3875" />
         <entry key="..\:/MOBILE-ARISS/app/src/main/res/menu/profile_menu.xml" value="0.3875" />
+        <entry key="..\:/m222/MOBILE-ARISS/app/src/main/res/layout/activity_about_aris.xml" value="0.18072916666666666" />
+        <entry key="..\:/m222/MOBILE-ARISS/app/src/main/res/layout/activity_add_pets.xml" value="0.18072916666666666" />
+        <entry key="..\:/m222/MOBILE-ARISS/app/src/main/res/layout/activity_bite_case_file.xml" value="0.18072916666666666" />
+        <entry key="..\:/m222/MOBILE-ARISS/app/src/main/res/layout/activity_login_user.xml" value="0.25" />
+        <entry key="..\:/m222/MOBILE-ARISS/app/src/main/res/layout/activity_update_profile.xml" value="0.21" />
+        <entry key="..\:/m222/MOBILE-ARISS/app/src/main/res/layout/add_vaccine_status.xml" value="0.18072916666666666" />
       </map>
     </option>
   </component>

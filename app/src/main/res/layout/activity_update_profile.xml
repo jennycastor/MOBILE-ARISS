@@ -137,7 +137,7 @@
 
                 <!-- Spinner Element -->
                 <Spinner
-                    android:id="@+id/sex"
+                    android:id="@+id/edit_sex"
                     android:layout_width="250dp"
                     android:layout_height="48dp"
                     android:entries="@array/sex" />
@@ -155,7 +155,7 @@
 
                 <!-- Spinner Element -->
                 <Spinner
-                    android:id="@+id/barangay"
+                    android:id="@+id/edit_barangay"
                     android:layout_width="250dp"
                     android:layout_height="48dp"
                     android:entries="@array/barangay" />
