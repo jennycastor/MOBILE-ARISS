@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Classes.MainActivity"
+    android:orientation="vertical"
+    android:background="#ededed"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Add_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="15dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="230dp"
+                        android:layout_height="230dp"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/logo"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="ABOUT ARIS"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="8dp"
+                        android:justificationMode="inter_word"
+                        android:text="Vaccination has undeniably been very beneficial in promoting a healthy global population. In terms of computational approaches, immunoinformatics systems such as ARIS have paved the way for a better understanding of the rabies virus. This could be a significant step forward in addressing a critical global health challenge per population."
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="8dp"
+                        android:justificationMode="inter_word"
+                        android:text="A.R.I.S (Anti-Rabies Immunoinformatics System) is a system that aims to provide anti-rabies immunization services to Animal Bite Centers and other facilities that are legible to administer anti-rabies vaccines in Taguig City. As a result, the system is solely capable of monitoring anti-rabies vaccination."
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:text="FEATURES"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="175dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="6dp"
+                                android:background="@color/aris" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Vaccination Tracker"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:justificationMode="inter_word"
+                                    android:text="It enables you to track your vaccination status from time to time." />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="175dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="6dp"
+                                android:background="@color/aris" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Appointment System"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:justificationMode="inter_word"
+                                    android:text="It enables you to set an appointment ahead of time." />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="175dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="6dp"
+                                android:background="@color/aris" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Nearby Treatment Centers"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:justificationMode="inter_word"
+                                    android:text="It enables you to see the nearby Treatment Centers on your location." />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="175dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="6dp"
+                                android:background="@color/aris" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Real-Time Statistics"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:justificationMode="inter_word"
+                                    android:text="It enables you to see rabies-related statistical reports." />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="6dp"
+                        android:background="@color/aris"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="WOUND MANAGEMENT"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:background="@color/aris"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step1"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Wash the Wound Immediately"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="Wash the wound with soap or detergent as soon as possible under running tap water for at least 10 minutes. " />
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step2"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Dry the Wound"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="After thorough washing, pat the wound dry with a clean cloth." />
+
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:background="@color/aris"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step3"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Apply Disinfectant"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="Apply disinfectant - e.g. povidone iodine, spirit, etc. - after thoroughly washing and drying the wound." />
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step4"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Don't Apply Irritants"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="Irritants, such as bleach, Chilli, soil, oils, turmeric, lime, salt, and plant juice are just a few examples that should not be applied on the wounds." />
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:background="@color/aris"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step5"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Avoid Touching the Wound with Bare Hands"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="Don't touch the wound with bare hands." />
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step6"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Postpone Suturing if Possible"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="If suturing is at all necessary, it should be performed after cleaning and infiltrating RIG at the depth of wound and only minimum number of loose suture should be applied." />
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:background="@color/aris"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step7"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Don't Cauterize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="Don't burn the skin or flesh of (a wound) using a heated instrument or caustic chemical in order to stop bleeding or to prevent infection." />
+
+                        <ImageView
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/step7"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Watch for Signs of Infection"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:justificationMode="inter_word"
+                            android:text="Seek help if you suspect infection or possible exposure to rabies." />
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/aris" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="FAQ's"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/aris">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:layout_marginTop="5dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:text="What is rabies?"
+                                            android:textSize="20dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:justificationMode="inter_word"
+                                            android:text="Rabies is a virus-borne disease that is spread from animals to humans. There are two types of rabies symptoms: frantic and paralytic. The most common form of human rabies is frantic rabies. "
+                                            android:textSize="16dp"
+                                            android:textStyle="italic" />
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:text="How is rabies transmitted?"
+                                            android:textSize="20dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:justificationMode="inter_word"
+                                            android:text="The rabies virus invades the nervous system of mammals. It is primarily transmitted from the rabid animal's saliva when it bites or scratches someone. Licks to wounds or grazed and broken skin, or to the lining of the mouth and nose, can also transmit the disease."
+                                            android:textSize="16dp"
+                                            android:textStyle="italic" />
+
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:text="How does rabies develop in humans?"
+                                            android:textSize="20dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:justificationMode="inter_word"
+                                            android:text="The rabies virus enters the human body via the innermost layer of tissue called subcutaneous tissue. It migrates along nerves to the spinal cord and brain at an estimated speed of 12-24 mm a day. The incubation period for a person infected with rabies can be as long as 1 year."
+                                            android:textSize="16dp"
+                                            android:textStyle="italic" />
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Symptoms of rabies in human?"
+                                            android:textSize="20dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:justificationMode="inter_word"
+                                            android:text="The first symptoms of rabies are similar to those of the flu such as general weakness or discomfort, fever, and headache. As the rabies virus incubates inside the body, the person may experience an itching sensation around the bite area. Patients will later experience delirium, abnormal behavior, hydrophobia, and insomnia."
+                                            android:textSize="16dp"
+                                            android:textStyle="italic" />
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Symptoms of rabies in a dog or animal?"
+                                            android:textSize="20dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:justificationMode="inter_word"
+                                            android:text="Dogs infected with the rabies virus develop the following symptoms:. Restlessness, Incoordination and paralysis, Lethargy, Hoarse barking or inability to do so, Hyper salivation and excessive salivation."
+                                            android:textSize="16dp"
+                                            android:textStyle="italic" />
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="6dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginRight="6dp"
+                                            android:text="What is the earliest age at which my dog can be vaccinated?"
+                                            android:textAlignment="center"
+                                            android:textSize="20dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:justificationMode="inter_word"
+                                            android:text="Every rabies vaccine has specific recommendations regarding which animals it is prepared for and when an animal should be vaccinated. In dog rabies endemic countries where vaccination is by annual mass vaccination campaigns, all dogs including those less than 3 months old should be vaccinated."
+                                            android:textSize="16dp"
+                                            android:textStyle="italic" />
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:text="Why eliminate rabies?"
+                                            android:textSize="20dp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:justificationMode="inter_word"
+                                            android:text="Because rabies kills. Every year, an estimated 59,000 people die of one of the oldest and most terrifying diseases known to man which is rabies virus."
+                                            android:textSize="16dp"
+                                            android:textStyle="italic" />
+
+                                    </LinearLayout>
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+                        </FrameLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="MEET THE TEAM"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="160dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+
+                                    android:padding="10dp"
+                                    app:srcCompat="@drawable/ic_pets"
+                                    tools:ignore="VectorDrawableCompat" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Sairyl Navasca"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+
+                            android:layout_width="160dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_pets" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Ashley Jullien Supnet "
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/Search_card"
+                            android:layout_width="160dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_pets" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Jenny Gel Castor"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/Viewall_card"
+                            android:layout_width="160dp"
+                            android:layout_height="150dp"
+                            android:layout_margin="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+
+                                    android:padding="10dp"
+                                    android:src="@drawable/ic_pets" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Mathew Jose Matanguihan"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="30dp"
+                            android:text="TERMS AND CONDITIONS"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/aris" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:text="I hereby authorize the Anti-Rabies Immunoinformatics System, to collect, process, and store the data indicated herein to conduct rabies vaccination monitoring and other relevant steps to combat rabies virus. I understand that my personal information is protected by RA 10173 or the Data Privacy Act of 2012."
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:text="(Pinahihintulutan ko ang Anti-Rabies Immunoinformatics System upang mangolekta, iproseso, at iimbak ang datos na ipinahihiwatig dito upang maisagawa ang pamamahala ng rabies vaccination at iba pang hakbang para malabanan ang rabies virus. Naiintindihan ko na ang aking personal na impormasyon ay protektado ng RA 10173 o Data Privacy Act of 2012.)"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="30dp"
+                            android:text="PRIVACY POLICY"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/aris" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="A.R.I.S (Anti-Rabies Immunoinformatics System) is a system that aims to provide anti-rabies immunization services to animal bite centers and other facilities that are legible to administer anti rabies vaccines in Taguig City. Animal Bite Centers and public or private clinics that is ARIS integrated can scan QR codes of the registered patients instead of manually filling out exposure forms and patient records. The web and mobile application enables you track your vaccination status from time to time, find and set an appointment with the nearest Animal Bite Clinics and Treatment Centers (ABCTC) that provides anti-rabies services, monitor your pets vaccination status and history, read and view the latest data and news related to rabies exposures."/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="The system, which is made available in desktop and mobile phones, aims to help the city to collect, manage, analyze and monitor individual’s information easier and more accurate. We ensure the confidentiality of data and user’s safety. Thus, we will only require what is completely necessary for the system to perform its functions. No information will be collected from our users until they have agreed to the terms and conditions along with our privacy policy and have given their consent. This page is used to inform the reader regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service."/>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="30dp"
+                            android:text="WHAT INFORMATION WE COLLECT FROM THE USER"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="The personal information that is collected by ARIS will be handled, stored, and protected in accordance with the Republic Act 10173 or the Data Privacy Act of 2012. ARIS will collect, use, or disclose your personal information only in accordance with this policy and the Data Privacy Act of 2012."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text=" We only collect personal data for specified and legitimate purposes determined and declared before, or as soon as reasonably practicable after collection, and later processed in a way compatible with such declared, specified and legitimate purposes only."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="These are the following data needed upon registering, with the corresponding purpose:"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="1. Avatar - so user can customize their profile. The image uploaded will not be monitored by the ABC's and the developers."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="2. Name – so ABC's or Health Centers may properly identify the right person when vaccination is made."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="3. Address – so location will be determined and record bite or scratch exposures properly."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="4. Gender - so the ABC's or Health Centers may classify the users sexuality."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="5. Birthdate – being used for proper identification and in case multiple persons have the same name."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="6. Email – so the system can have a unique identification."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="7. User Name - so the system can have an option for unique identification aside from the email."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="8. Password – for security purpose of your account but take note that only the system can get this, even the developers couldn’t see your input."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="9. Mobile Number (Optional) - so the ABC's or Health Centers may contact you regarding your vaccination or rabies-related health reports."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="10. Consent for using ARIS - to know the user’s consent if they want to use the service."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="While the ARIS does not require some other personal information when creating their profile upon registration, users have an option to update or complete their profile after."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:text="GRANTING DEVICE ACCESS"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="Granting access to the gallery will give the system access to the device’s gallery file but will limit and only allow users to select one photo for uploading. The app will not be able to use nor access videos or any other type of file on the device."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="Granting access to the device's location will give the system access to your real-time location and will only be used when searching for nearest ABC or Health Center near you. The system can locate up to 5km away clinics from your current location. Disabling this permission will affect the appointment scheduling feauture of the system."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="HOW WILL PERSONAL INFORMATION BE COLLECTED?"
+                            android:textStyle="bold"
+                        />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="1. After downloading the mobile app or accessing the ARIS website, you will be able to enter some required personal information stated above for registration."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="2. You need to provide your valid email address for validation using an autogenerated email confirmation."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="3. Once registration is completed, you now have your unique QR code which will be scanned every appointment or your vaccination."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="4. During your active rabies vaccination, you can send health reports or update the clinic with your rabies-related concerns."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="LOG DATA"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your device called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics. The Log Data are statistical and technical data that does not contain personal information and are merely collected to improve the application’s services."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="TOKENS"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="Tokens, usually referring to JSON Web Tokens (JWTs), are signed credentials encoded into a long string of characters created by the server. At the sign-in request, an authentication token is assigned to the user. It will be used to authorize the user and authenticate subsequent interactions with the application. The authentication token assigned to the user is only valid for a specific period of time. If the token becomes invalid, the user needs to be re-authenticated before access can be granted."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="WHAT DO WE DO WITH THE COLLECTED DATA"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="This data would only be retained and used specifically for the purpose of monitoring rabies exposure cases and rabies vaccination. The said data would only be used by the ARIS or Anti-Rabies Immunoinformatics Systems integrated clinics. The system is available both in web and mobile."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="RETENTION OF PERSONAL DATA AND COLLECTED DATA"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="We and/or our duly authorized third party shall retain the Personal Data and Collected Data for as long as necessary for the fulfillment and standards of the Department of Health and in any case provided by the law counted from the date you provide it to us or when they were collected, respectively."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="DISCLOSURE AND SHARING OF PERSONAL DATA AND COLLECTED DATA"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="We may disclose and share the Personal Data and Collected Data, subject to compliance with applicable laws and regulations, on a need to know basis, and in all cases only for legitimate business purposes, as follows:"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="-To contractors, service providers, and other third parties who We engage to support our business, and who are bound by contractual obligations to keep Customer Information and Collected Data confidential, and use it only for the purposes for which We disclose it to them;"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="To government and law enforcement agencies and regulatory bodies;"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="-To comply with orders of courts, government agencies, regulatory bodies, stock exchanges and with applicable laws and regulations;"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="-If we believe disclosure is necessary or appropriate to protect our rights, property, or safety, and our employees, or other third parties; and"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="-To conduct investigations of breaches of our internal policies, laws and regulations, enforce appropriate sanctions and pursue legal actions, if necessary."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="ACCESSING AND CORRECTING YOUR PERSONAL DATA"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="You are entitled to certain rights in relation to the Personal Data collected from you, including the right to access and correct your Personal Data being processed, object to the processing, and to lodge a complaint before the National Privacy Commission in case of violation of your rights as data subject. You may send us an e-mail at aris.developers1@gmail.com to request access to, correct and/or delete any Personal Data that you have provided to us."
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="Please be advised, however, that we cannot delete your Personal Data without restricting or removing our ability to effectively address your Concerns or process submitted resumes for employment purposes. We may not accommodate a request to correct and/or delete Personal Data if we believe the same would violate any law or legal requirement or cause the Personal Data to be incorrect."
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="18dp"
+                            android:text="SECURITY OF YOUR PERSONAL DATA AND THE DATA COLLECTED"
+                            android:textStyle="bold"
+                            />
+                        <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:justificationMode="inter_word"
+                        android:textSize="18dp"
+                        android:text="We have implemented technical, organizational, and physical measures designed to protect the confidentiality, integrity, and availability of your Personal Data and Collected Data and secure such Data from destruction, unauthorized access, alteration, disclosure, fraudulent misuse and/or any other unlawful processing, as well as other natural and human dangers."
+                        />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:justificationMode="inter_word"
+                            android:textSize="12dp"
+                            android:text="Last Updated: April 17, 2022"
+                            android:textStyle="italic"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

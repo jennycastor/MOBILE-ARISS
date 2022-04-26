@@ -6,7 +6,6 @@
     android:id="@+id/bite_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
     android:backgroundTint="#FFFFFF"
     android:clickable="true"
     android:focusable="true"
@@ -21,7 +20,6 @@
         android:background="#FFFFFF"
         android:focusable="true"
         android:orientation="vertical"
-        android:padding="10px"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="12dp"
@@ -43,7 +41,7 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/upro"
                 android:layout_width="67dp"
-                android:layout_height="42dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_profile"
                 app:civ_border_color="#F41A1A"
@@ -56,8 +54,20 @@
                 android:layout_marginTop="9dp"
                 android:fontFamily="sans-serif-black"
                 android:text="Username"
-                android:textSize="18dp" />
+                android:textSize="23dp" />
         </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Type" />
 
         <TextView
             android:id="@+id/desc"
@@ -66,28 +76,17 @@
             android:paddingTop="5dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
-            android:text="Description" />
-
-        <TextView
-            android:id="@+id/type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:text="Type" />
+            android:text="Message" />
 
         <TextView
             android:id="@+id/date_hr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="14dp"
+            android:textSize="16dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:text="Date" />
@@ -121,7 +120,7 @@
                     android:text="Admin Name"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="18dp" />
+                    android:textSize="20dp" />
 
 <!--                <TextView-->
 <!--                    android:id="@+id/role"-->
@@ -141,7 +140,7 @@
                     android:layout_marginTop="5dp"
                     android:text="Reply"
                     android:textColor="@color/black"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/createdAt"

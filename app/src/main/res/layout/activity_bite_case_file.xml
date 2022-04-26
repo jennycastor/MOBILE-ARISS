@@ -48,8 +48,8 @@
 
                         <ImageView
                             android:id="@+id/qrcode"
-                            android:layout_width="190dp"
-                            android:layout_height="190dp"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
                             android:background="@drawable/ic_qr"
                             android:layout_gravity="center"
                             android:layout_marginTop="15dp"
@@ -66,9 +66,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:textSize="16dp"
+                            android:textSize="20dp"
                             android:gravity="center"
-                            android:text="EXPOSURE DETAIL"
+                            android:text="EXPOSURE DETAILS"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
                             android:layout_marginTop="15dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
+                            android:textSize="15dp"
                             android:text="Date of Exposure:"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -91,7 +91,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
+                            android:textSize="15dp"
                             android:text="Place of Incident:"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -103,7 +103,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
+                            android:textSize="15dp"
                             android:text="Type of Exposure:"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -115,7 +115,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
+                            android:textSize="15dp"
                             android:text="Exposure Category:"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -127,7 +127,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
+                            android:textSize="15dp"
                             android:text="Vaccination Status:"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
@@ -139,8 +139,8 @@
                             android:layout_marginTop="10dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
-                            android:text="Patient/ Bite Case Status:"
+                            android:textSize="15dp"
+                            android:text="Site:"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
 
@@ -151,9 +151,9 @@
                             android:layout_marginTop="10dp"
                             android:layout_gravity="left"
                             android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
+                            android:textSize="15dp"
                             android:layout_marginBottom="15dp"
-                            android:text="Patient/ Bite Case Status:"
+                            android:text="Patient Status:"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
 
