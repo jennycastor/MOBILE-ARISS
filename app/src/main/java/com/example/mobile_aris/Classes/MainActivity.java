@@ -1,5 +1,6 @@
 package com.example.mobile_aris.Classes;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,11 +20,14 @@ import androidx.cardview.widget.CardView;
 
 import com.example.mobile_aris.Authentication.LoginAndSignUp;
 import com.example.mobile_aris.Classes.Appointments.Appointments;
+import com.example.mobile_aris.Classes.PetVaxx.Pet_Vaxx;
+import com.example.mobile_aris.Classes.Pets.edit_pet;
 import com.example.mobile_aris.Classes.Pets.my_pets;
 import com.example.mobile_aris.Classes.User.user_profile;
 import com.example.mobile_aris.R;
 import com.example.mobile_aris.bites.bite_cases;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
-        CardView Export_card, bar_card;
+        CardView Export_card, bar_card, about_card;
 
         getGCount();
         getCCount();
@@ -84,6 +91,45 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent ( MainActivity.this, barcount.class);
                 startActivity(intent);
+            }
+        });
+
+
+        about_card = findViewById(R.id.about_card);
+
+        about_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent ( MainActivity.this, barcount.class);
+//                startActivity(intent);
+                Dialog Pakita = new Dialog(MainActivity.this);
+                Pakita.setContentView(R.layout.about_aris_new);
+                Pakita.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+                Button bc = Pakita.findViewById(R.id.back);
+                bc.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+//                        Intent petIntent = new Intent(getApplicationContext(), MainActivity.class);
+//                        startActivity(petIntent);
+//                        onBackPressed();
+                        Pakita.dismiss();
+                    }
+                });
+
+                FloatingActionButton scup;
+                scup = Pakita.findViewById(R.id.scup);
+                scup.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ScrollView sccc = Pakita.findViewById(R.id.sccc);
+                        sccc.smoothScrollTo(0,0);
+                    }
+                });
+
+                Pakita.show();
+                Pakita.setCancelable(false);
             }
         });
     }

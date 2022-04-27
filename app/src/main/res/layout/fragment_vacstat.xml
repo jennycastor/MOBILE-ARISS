@@ -73,25 +73,6 @@
             android:paddingEnd="4dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/addVaxxx"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="-55dp"
-            android:insetLeft="0dp"
-            android:insetTop="0dp"
-            android:insetRight="0dp"
-            android:insetBottom="0dp"
-            android:layout_gravity="center"
-            app:icon="@drawable/ic_baseline_add_24"
-            app:iconTint="@color/cardview_light_background"
-            android:backgroundTint="#2196F3"
-            app:iconSize="28dp"
-            app:iconGravity="textTop"
-            app:iconPadding="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp" />
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/deleteVaxx"
             android:layout_width="55dp"
             android:layout_height="55dp"

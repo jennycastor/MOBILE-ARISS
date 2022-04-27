@@ -72,7 +72,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     private CheckBox terms;
     TextView name;
     SharedPreferences sp, LastSelect, LastSelectbar;
-//    private Bitmap bitmap=null;
+    //    private Bitmap bitmap=null;
 //    Context c;
     private View v;
     // TODO: Rename parameter arguments, choose names that match
@@ -233,7 +233,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        final String URLSignUp="http://192.168.100.32:5000/api/user/auth/register";
+        final String URLSignUp="https://aris-backend.herokuapp.com/api/user/auth/register";
         String pass1,pass2;
         pass1=password.getText().toString();
         pass2=confirm_password.getText().toString();
@@ -318,21 +318,21 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
 //                                        String imageUri = (image).toString();
 
 
-                                        editor.putString("token", access_token);
+                                    editor.putString("token", access_token);
 //                                        editor.putString("_id", user_id);
 //                                        Picasso.get().load(imageUri).into(profile_image);
 //                                        Picasso.get().load((String) resultData.get("secure_url")).into(avatar);
-                                        editor.putString("profile_url", String.valueOf(resultData.get("secure_url")));
-                                        editor.putString("_id",obj.getString("_id").toString());
-                                        editor.putString("firstname",obj.getString("first_name"));
-                                        editor.putString("lastname",obj.getString("last_name"));
-                                        editor.putString("birthday",obj.getString("birthday"));
-                                        editor.putString("sex", obj.getString("sex"));
-                                        editor.putString("barangay", obj.getString("address"));
-                                        editor.putString("email_add",obj.getString("email"));
-                                        editor.putString("phone",obj.getString("phone_number"));
-                                        editor.putString("username",obj.getString("username"));
-                                        editor.putString("password",obj.getString("password"));
+                                    editor.putString("profile_url", String.valueOf(resultData.get("secure_url")));
+                                    editor.putString("_id",obj.getString("_id").toString());
+                                    editor.putString("firstname",obj.getString("first_name"));
+                                    editor.putString("lastname",obj.getString("last_name"));
+                                    editor.putString("birthday",obj.getString("birthday"));
+                                    editor.putString("sex", obj.getString("sex"));
+                                    editor.putString("barangay", obj.getString("address"));
+                                    editor.putString("email_add",obj.getString("email"));
+                                    editor.putString("phone",obj.getString("phone_number"));
+                                    editor.putString("username",obj.getString("username"));
+                                    editor.putString("password",obj.getString("password"));
 
 
 
@@ -400,7 +400,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
                 }
             });
 
-    
+
     //Formatting Date
     private void updateLabel() {
         String mFormat="MMM d, yyyy";

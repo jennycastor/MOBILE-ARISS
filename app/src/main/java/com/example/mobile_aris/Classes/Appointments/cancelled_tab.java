@@ -100,68 +100,13 @@ public class cancelled_tab extends AppCompatActivity implements CancelledAdapter
             }
         });
 
-//        setListeners();
-//
-//    }
-
-
-//    public void setListeners() {
-//        FloatingActionButton addPets;
-//        addPets = findViewById(R.id.addPets);
-//
-////        MaterialButton editPet;
-////        editPet = findViewById(R.id.editPet);
-//
-//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-//        bottomNavigationView.setSelectedItemId(R.id.appointments);
-//
-//        FloatingActionButton SetAppointment;
-//
-//
-//        SetAppointment = findViewById(R.id.addAppoint);
-//
-//        SetAppointment.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent ( cancelled_tab.this, set_appointment.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                switch (item.getItemId()) {
-//                    case R.id.home:
-//                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.appointments:
-//                        return true;
-//                    case R.id.bitecases:
-//                        startActivity(new Intent(getApplicationContext(), bite_cases.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//
-//                    case R.id.profile:
-//                        startActivity(new Intent(getApplicationContext(), user_profile.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.mypets:
-//                        startActivity(new Intent(getApplicationContext(), my_pets.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                }
-//                return false;
-//            }
-//        });
         Pakita.show();
     }
 
 
     private void parseJSON() {
         mExampleList.clear();
-        String url = "http://192.168.100.32:5000/api/appointments/get/my-appointments";
+        String url = "https://aris-backend.herokuapp.com/api/appointments/get/my-appointments";
 
         JSONObject ji = new JSONObject();
         try {

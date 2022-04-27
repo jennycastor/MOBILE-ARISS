@@ -27,7 +27,7 @@
             android:name=".Details.PendingDetailActivity"
             android:label="Pending Detail Activity" />
         <activity
-            android:name=".models.set_appointment"
+            android:name=".Classes.Appointments.set_appointment"
             android:label="Set Appointments" />
         <activity
             android:name=".Classes.Appointments.cancelled_tab"
@@ -41,6 +41,9 @@
         <activity
             android:name=".Classes.about_aris"
             android:label="About ARIS" />
+        <activity
+            android:name=".Classes.Uservaxx"
+            android:label="User Vaxx" />
         <activity
             android:name=".Classes.contact_form"
             android:label="Contact ARIS" />
@@ -57,7 +60,7 @@
             android:name=".Classes.barcount"
             android:label="Barangay Count" />
         <activity
-            android:name=".Classes.edit_vaxx"
+            android:name=".Classes.PetVaxx.Edit_Vaxx"
             android:label="Edit Pet Vaxx" />
         <activity
             android:name=".Classes.Pets.pet_profile"
@@ -66,7 +69,7 @@
             android:name=".Classes.Pets.Add_Pet"
             android:label="Add Pet" />
         <activity
-            android:name=".Classes.Pet_Vaxx"
+            android:name=".Classes.PetVaxx.Pet_Vaxx"
             android:label="Vaccine Status" />
         <activity
             android:name=".Classes.health_report"
@@ -91,6 +94,9 @@
         <activity
             android:name=".bites.bite_cases"
             android:label="Bite Cases" />
+        <activity
+            android:name=".Classes.PetVaxx.Add_Vaxx"
+            android:label="Add Vaxx" />
         <activity
             android:name=".Details.BiteDetailActivity"
             android:label="Bite Details" />

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,7 +31,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,6 +45,7 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
     private EditText email,password;
     private CheckBox remember_me;
     private Button login_button;
+    SharedPreferences remember, gcount,ccount, bcount;
     String id,token;
     //    private TextView sign_up_link, forgot_pass;
     private View v;
@@ -95,6 +99,10 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        remember = getActivity().getSharedPreferences("user_info",Context.MODE_PRIVATE);
+        gcount = getActivity().getSharedPreferences("gcount_info",Context.MODE_PRIVATE);
+        ccount = getActivity().getSharedPreferences("ccount_info",Context.MODE_PRIVATE);
+        bcount = getActivity().getSharedPreferences("bcount_info",Context.MODE_PRIVATE);
     }
 
     @Override
@@ -116,7 +124,7 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
         email=(EditText)v.findViewById(R.id.email);
         password=(EditText)v.findViewById(R.id.password);
         remember_me=(CheckBox)v.findViewById(R.id.terms);
-        final String URLLogin ="http://192.168.100.32:5000/api/user/auth/login";
+        final String URLLogin ="https://aris-backend.herokuapp.com/api/user/auth/login";
 
 
         //creating new JSONObj
@@ -137,18 +145,19 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    token=response.getString("token");
                     getGenderCount();
                     getCatCount();
                     getBarCount();
                     JSONObject data = response.getJSONObject("user");
                     JSONObject avatar = data.getJSONObject("avatar");
-                    String access_token=response.getString("token");
-                    if(access_token!=null){
-                        SharedPreferences remember = getActivity().getSharedPreferences("user_info",Context.MODE_PRIVATE);
+
+                    if(token!=null){
+
                         SharedPreferences.Editor editor = remember.edit();
 
                         JSONObject obj=response.getJSONObject("user");
-                        editor.putString("access_token", access_token);
+                        editor.putString("access_token", token);
                         if(remember_me.isChecked()){
                             editor.putString("remembered","true");
                             editor.putString("profile_url", avatar.getString("url"));
@@ -203,11 +212,11 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
     public void getGenderCount() {
         RequestQueue requestQueue= Volley.newRequestQueue(getContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/analytics/get/genderCount", null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/analytics/get/genderCount", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    SharedPreferences gcount = getActivity().getSharedPreferences("gcount_info",Context.MODE_PRIVATE);
+
                     SharedPreferences.Editor geditor = gcount.edit();
 
                     JSONArray data = response.getJSONArray("genderCount");
@@ -246,18 +255,27 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
             public void onErrorResponse(VolleyError error) {
                 Log.d("JSON Exception", String.valueOf(error));
             }
-        });
+        }){
+
+            //This is for Headers If You Needed
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+ token);
+                return params;
+            }
+        };
         requestQueue.add(jsonObjectRequest);
     }
 
     public void getCatCount() {
         RequestQueue requestQueue= Volley.newRequestQueue(getContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/analytics/get/categoryCount", null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/analytics/get/categoryCount", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    SharedPreferences ccount = getActivity().getSharedPreferences("ccount_info",Context.MODE_PRIVATE);
+
                     SharedPreferences.Editor ceditor = ccount.edit();
 
                     JSONArray data = response.getJSONArray("categoryCount");
@@ -291,18 +309,27 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
             public void onErrorResponse(VolleyError error) {
                 Log.d("JSON Exception", String.valueOf(error));
             }
-        });
+        }){
+
+            //This is for Headers If You Needed
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+ token);
+                return params;
+            }
+        };
         requestQueue.add(jsonObjectRequest);
     }
 
     public void getBarCount() {
         RequestQueue requestQueue= Volley.newRequestQueue(getContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/analytics/get/barangayCount", null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/analytics/get/barangayCount", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    SharedPreferences bcount = getActivity().getSharedPreferences("bcount_info",Context.MODE_PRIVATE);
+
                     SharedPreferences.Editor beditor = bcount.edit();
 
                     JSONArray data = response.getJSONArray("barangayCount");
@@ -322,7 +349,16 @@ public class LogInFragment extends Fragment implements View.OnClickListener {
             public void onErrorResponse(VolleyError error) {
                 Log.d("JSON Exception", String.valueOf(error));
             }
-        });
+        }){
+
+            //This is for Headers If You Needed
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+ token);
+                return params;
+            }
+        };
         requestQueue.add(jsonObjectRequest);
     }
 

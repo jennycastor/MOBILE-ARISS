@@ -3,7 +3,6 @@ package com.example.mobile_aris.Adapter;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,7 +24,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.mobile_aris.Classes.Pet_Vaxx;
+import com.example.mobile_aris.Classes.PetVaxx.Edit_Vaxx;
+import com.example.mobile_aris.Classes.PetVaxx.Pet_Vaxx;
 import com.example.mobile_aris.Classes.edit_vaxx;
 import com.example.mobile_aris.R;
 import com.example.mobile_aris.models.PetVaxxModel;
@@ -44,7 +44,7 @@ public class VaxxAdapter extends RecyclerView.Adapter<VaxxAdapter.ViewHolder> {
     ArrayList<PetVaxxModel> bitemodel = new ArrayList<PetVaxxModel>();
     Context context;
 
-    String id,token;
+    String id,token, pid;
 
     public VaxxAdapter(ArrayList<PetVaxxModel> items) {
         bitemodel = items;
@@ -106,7 +106,7 @@ public class VaxxAdapter extends RecyclerView.Adapter<VaxxAdapter.ViewHolder> {
 //                editor.putString("color", currentItem.getPColor());
                 editor.apply();
 
-                Intent intent = new Intent ( context, edit_vaxx.class);
+                Intent intent = new Intent ( context, Edit_Vaxx.class);
                 context.startActivity(intent);
             }
         });
@@ -115,20 +115,29 @@ public class VaxxAdapter extends RecyclerView.Adapter<VaxxAdapter.ViewHolder> {
         holder.f.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences info = context.getSharedPreferences("user_info",MODE_PRIVATE);
+                token= info.getString("access_token","");
+
+                SharedPreferences pinfo = context.getSharedPreferences("petid", MODE_PRIVATE);
+                pid = pinfo.getString("pid", "");
                 JSONObject ji = new JSONObject();
+                JSONObject jo = new JSONObject();
                 try {
+                    //vaccine_id
                     ji.put("_id", bitemodel.get(position).getVId().toString());
+                    //pet_id
+                    jo.put("id", pid);
+                    jo.put("data", ji);
+                    Log.d("jo", String.valueOf(jo));
                 }catch (
                         JSONException je){
                     je.printStackTrace();
                 }
                 RequestQueue requestQueue = Volley.newRequestQueue(context);
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                        "http://192.168.100.32:5000/api/pet/delete/vaxx-detail" , ji, new Response.Listener<JSONObject>() {
+                        "https://aris-backend.herokuapp.com/api/pet/delete/vaxx-detail" , jo, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        SharedPreferences info = context.getSharedPreferences("user_info",MODE_PRIVATE);
-                        token= info.getString("access_token","");
                         Log.d("token", token);
 //                        LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.activity_my_pets,null).refreshDrawableState();
                         Intent petIntent = new Intent(context, Pet_Vaxx.class);
@@ -154,62 +163,6 @@ public class VaxxAdapter extends RecyclerView.Adapter<VaxxAdapter.ViewHolder> {
             }
         });
 
-        holder.g.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context.getApplicationContext(), "add button clicked", Toast.LENGTH_LONG).show();
-                Dialog Pakita = new Dialog(context);
-                Pakita.setContentView(R.layout.activity_add_vaxx);
-                Pakita.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-
-                Button bc = Pakita.findViewById(R.id.back);
-                bc.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Pakita.cancel();
-                    }
-                });
-
-                Button addv = Pakita.findViewById(R.id.addvaxx);
-                addv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        JSONObject jo = new JSONObject();
-                        try {
-                            jo.put("vaccine_name", Pakita.findViewById(R.id.avacname));
-                            jo.put("date_of_vaccination", Pakita.findViewById(R.id.avacdate));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        RequestQueue requestQueue= Volley.newRequestQueue(context.getApplicationContext());
-                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                                "http://192.168.100.32:5000/api/petadd/vaxx-detail", jo, new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                Log.d("Vaxx", "Added Successfully");
-                            }
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.d("JSON Exception", String.valueOf(error));
-                            }
-                        }){
-
-                            //This is for Headers If You Needed
-                            @Override
-                            public Map<String, String> getHeaders() throws AuthFailureError {
-                                Map<String, String> params = new HashMap<String, String>();
-                                params.put("Authorization", "Bearer " + token);
-                                return params;
-                            }
-                        };
-                        requestQueue.add(jsonObjectRequest);
-                    }
-                });
-                Pakita.show();
-            }
-        });
-
     }
 
     @Override
@@ -232,7 +185,7 @@ public class VaxxAdapter extends RecyclerView.Adapter<VaxxAdapter.ViewHolder> {
             d = (TextView) ItemView.findViewById(R.id.revacSched);
             e = (Button) ItemView.findViewById(R.id.editVaxx);
             f = (MaterialButton) ItemView.findViewById(R.id.deleteVaxx);
-            g = (MaterialButton) ItemView.findViewById(R.id.addVaxxx);
+//            g = (MaterialButton) ItemView.findViewById(R.id.addVaxxx);
 //            f = (CardView) ItemView.findViewById(R.id.bite_card);
             bno = ("id ");
             loc = ("Vaccine Name: ");

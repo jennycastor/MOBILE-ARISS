@@ -42,7 +42,7 @@ public class barcount extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/analytics/get/barangayCount", null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/analytics/get/barangayCount", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {

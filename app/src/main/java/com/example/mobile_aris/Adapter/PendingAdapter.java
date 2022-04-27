@@ -102,7 +102,7 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.ViewHold
 
                 RequestQueue requestQueue = Volley.newRequestQueue(mContext);
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PATCH,
-                        "http://192.168.100.32:5000/api/appointments/cancel/" + pid, null, new Response.Listener<JSONObject>() {
+                        "https://aris-backend.herokuapp.com/api/appointments/cancel/" + pid, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("token", token);

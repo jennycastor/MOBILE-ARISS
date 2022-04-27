@@ -61,7 +61,7 @@ public class forgotpass extends AppCompatActivity implements View.OnClickListene
     public void ForgotPass(){
 //        forgot_pass = v.findViewById(R.id.forgot_pass);
         email=(EditText) findViewById(R.id.reset_email);
-        final String URLForgotPass ="http://192.168.100.32:5000/api/user/auth/forgot-password";
+        final String URLForgotPass ="https://aris-backend.herokuapp.com/api/user/auth/forgot-password";
         //creating new JSONObj
         JSONObject ji=new JSONObject();
 

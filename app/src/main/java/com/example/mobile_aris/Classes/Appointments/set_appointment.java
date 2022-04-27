@@ -1,4 +1,4 @@
-package com.example.mobile_aris.models;
+package com.example.mobile_aris.Classes.Appointments;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -36,6 +36,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mobile_aris.R;
+import com.example.mobile_aris.models.clinics;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;

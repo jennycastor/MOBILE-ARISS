@@ -132,7 +132,7 @@ public class MypetRecyclerViewAdapter extends RecyclerView.Adapter<MypetRecycler
 
                 RequestQueue requestQueue = Volley.newRequestQueue(mContext);
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.DELETE,
-                        "http://192.168.100.32:5000/api/pet/delete/" + petId, null, new Response.Listener<JSONObject>() {
+                        "https://aris-backend.herokuapp.com/api/pet/delete/" + petId, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("token", token);

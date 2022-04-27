@@ -36,6 +36,7 @@ import com.android.volley.toolbox.Volley;
 import com.cloudinary.android.MediaManager;
 import com.cloudinary.android.callback.ErrorInfo;
 import com.cloudinary.android.callback.UploadCallback;
+import com.example.mobile_aris.Classes.PetVaxx.Pet_Vaxx;
 import com.example.mobile_aris.R;
 import com.squareup.picasso.Picasso;
 
@@ -108,36 +109,47 @@ public class edit_pet extends AppCompatActivity implements View.OnClickListener 
         String color = remember.getString("color", "").toString();
 
         int genpos;
-                if (gender.equals("Male")){
-                    genpos = 2;
-                } else {
-                    genpos = 1;
-                }
+        if (gender.equals("Male")){
+            genpos = 2;
+        } else {
+            genpos = 1;
+        }
 
-                int spepos;
-                if (specie.equals("Cat")){
-                    spepos = 2;
-                } else {
-                    spepos = 1;
-                }
+        int spepos;
+        if (specie.equals("Cat")){
+            spepos = 2;
+        } else {
+            spepos = 1;
+        }
 
-                Button update_pet = dialog.findViewById(R.id.updatePet);
-                ImageView editImage = dialog.findViewById(R.id.image_view_detail);
-                Picasso.get().load(av_p).into(editImage);
-                EditText editName = dialog.findViewById(R.id.editname);
-                editName.setText(name);
-                EditText editAge = dialog.findViewById(R.id.age);
-                editAge.setText(age);
-                Spinner editGender = dialog.findViewById(R.id.text_view_gender);
-                editGender.setSelection(genpos);
-                Spinner editSpecie = dialog.findViewById(R.id.specie);
-                editSpecie.setSelection(spepos);
-                EditText editBreed = dialog.findViewById(R.id.breed);
-                editBreed.setText(breed);
-                EditText editColor = dialog.findViewById(R.id.color);
-                editColor.setText(color);
+        Button update_pet = dialog.findViewById(R.id.updatePet);
+        ImageView editImage = dialog.findViewById(R.id.image_view_detail);
+        Picasso.get().load(av_p).into(editImage);
+        EditText editName = dialog.findViewById(R.id.editname);
+        editName.setText(name);
+        EditText editAge = dialog.findViewById(R.id.age);
+        editAge.setText(age);
+        Spinner editGender = dialog.findViewById(R.id.text_view_gender);
+        editGender.setSelection(genpos);
+        Spinner editSpecie = dialog.findViewById(R.id.specie);
+        editSpecie.setSelection(spepos);
+        EditText editBreed = dialog.findViewById(R.id.breed);
+        editBreed.setText(breed);
+        EditText editColor = dialog.findViewById(R.id.color);
+        editColor.setText(color);
 
-                p_avatar = dialog.findViewById(R.id.image_view_detail);
+        p_avatar = dialog.findViewById(R.id.image_view_detail);
+
+        Button bc = dialog.findViewById(R.id.back);
+        bc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent petIntent = new Intent(getApplicationContext(), Pet_Vaxx.class);
+                getApplicationContext().startActivity(petIntent);
+                edit_pet.this.finish();
+            }
+        });
+
 
     }
 
@@ -188,157 +200,157 @@ public class edit_pet extends AppCompatActivity implements View.OnClickListener 
     }
 
 
-        @Override
-        public void onClick(View view) {
-            SharedPreferences info = getSharedPreferences("user_info", MODE_PRIVATE);
-            SharedPreferences pet = getSharedPreferences("Edit_pet_info", MODE_PRIVATE);
-            String user_id = info.getString("_id", "").toString();
-            String pass = info.getString("password", " ").toString();
-            petId = pet.getString("p_id", "");
-            petImage = pet.getString("image", "");
-            pubId = pet.getString("pubId", "");
-            final String URLUpdate = "http://192.168.100.32:5000/api/pet/update/" + petId;
+    @Override
+    public void onClick(View view) {
+        SharedPreferences info = getSharedPreferences("user_info", MODE_PRIVATE);
+        SharedPreferences pet = getSharedPreferences("Edit_pet_info", MODE_PRIVATE);
+        String user_id = info.getString("_id", "").toString();
+        String pass = info.getString("password", " ").toString();
+        petId = pet.getString("p_id", "");
+        petImage = pet.getString("image", "");
+        pubId = pet.getString("pubId", "");
+        final String URLUpdate = "https://aris-backend.herokuapp.com/api/pet/update/" + petId;
 
-            Log.d(TAG, ": " + " button clicked");
-            if (imagePath != null) {
-                MediaManager.get().upload(imagePath).callback(new UploadCallback() {
-                    @Override
-                    public void onStart(String requestId) {
-                        Log.d(TAG, "onStart: " + "started");
-                    }
-
-                    @Override
-                    public void onProgress(String requestId, long bytes, long totalBytes) {
-                        Log.d(TAG, "onStart: " + "uploading");
-                    }
-
-                    @Override
-                    public void onSuccess(String requestId, Map resultData) {
-                        Log.d(TAG, "onStart: " + "usuccess");
-                        Log.d("result data", String.valueOf(resultData));
-                        new JSONObject(resultData);
-                        Log.d("token", token);
-                        JSONObject jo = new JSONObject(); //equivalent to FormData in JS
-                        //Inserting the values in JSON object
-                        try {
-                            if (resultData != null) {
-                                jo.put("url", resultData.get("secure_url"));
-                                jo.put("public_id", resultData.get("public_id"));
-                            } else {
-                                jo.put("url", "");
-                                jo.put("public_id", "");
-                            }
-                            jo.put("from", "android");
-                            jo.put("name", p_name.getText());
-                            jo.put("age", p_age.getText());
-                            jo.put("color", p_color.getText());
-                            jo.put("owner", qr_id);
-                            jo.put("gender", p_sex.getSelectedItem()).toString();
-                            jo.put("species", p_specie.getSelectedItem()).toString();
-                            jo.put("breed", p_breed.getText()).toString();
-
-                        } catch (JSONException jsonException) {
-                            jsonException.printStackTrace();
-                        }
-
-                        //create Volley Request
-                        RequestQueue requestQueue = Volley.newRequestQueue(edit_pet.this);
-
-                        //CALL SIGNUP API
-                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PATCH, URLUpdate, jo, new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                Log.d("token", token);
-                                Intent petIntent = new Intent(edit_pet.this, my_pets.class);
-                                startActivity(petIntent);
-//                            mExampleList.clear();
-//                            mExampleAdapter.notifyDataSetChanged();
-                                Toast.makeText(getApplicationContext(), "Pet " + p_name.getText() + " Details Updated", Toast.LENGTH_LONG).show();
-                            }
-                        }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Log.d("JSON Exception", String.valueOf(error));
-                            }
-                        }) {
-                            @Override
-                            public Map<String, String> getHeaders() throws AuthFailureError {
-                                Map<String, String> params = new HashMap<String, String>();
-                                params.put("Authorization", "Bearer " + token);
-                                return params;
-
-                            }
-                        };
-
-                        //add request to queue
-                        requestQueue.add(jsonObjectRequest);
-                    }
-
-                    @Override
-                    public void onError(String requestId, ErrorInfo error) {
-                        Log.d(TAG, "onStart: " + error);
-                    }
-
-                    @Override
-                    public void onReschedule(String requestId, ErrorInfo error) {
-                        Log.d(TAG, "onStart: " + error);
-                    }
-                }).dispatch();
-            } else {
-                Log.d("token", token);
-                JSONObject jo = new JSONObject(); //equivalent to FormData in JS
-                //Inserting the values in JSON object
-                try {
-
-                    jo.put("url", petImage);
-                    jo.put("public_id", pubId);
-                    jo.put("from", "android");
-                    jo.put("name", p_name.getText());
-                    jo.put("age", p_age.getText());
-                    jo.put("color", p_color.getText());
-                    jo.put("owner", qr_id);
-                    jo.put("gender", p_sex.getSelectedItem()).toString();
-                    jo.put("species", p_specie.getSelectedItem()).toString();
-                    jo.put("breed", p_breed.getText()).toString();
-
-                } catch (JSONException jsonException) {
-                    jsonException.printStackTrace();
+        Log.d(TAG, ": " + " button clicked");
+        if (imagePath != null) {
+            MediaManager.get().upload(imagePath).callback(new UploadCallback() {
+                @Override
+                public void onStart(String requestId) {
+                    Log.d(TAG, "onStart: " + "started");
                 }
 
-                //create Volley Request
-                RequestQueue requestQueue = Volley.newRequestQueue(edit_pet.this);
+                @Override
+                public void onProgress(String requestId, long bytes, long totalBytes) {
+                    Log.d(TAG, "onStart: " + "uploading");
+                }
 
-                //CALL SIGNUP API
-                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PATCH, URLUpdate, jo, new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.d("token", token);
-                        Intent petIntent = new Intent(edit_pet.this, my_pets.class);
-                        startActivity(petIntent);
+                @Override
+                public void onSuccess(String requestId, Map resultData) {
+                    Log.d(TAG, "onStart: " + "usuccess");
+                    Log.d("result data", String.valueOf(resultData));
+                    new JSONObject(resultData);
+                    Log.d("token", token);
+                    JSONObject jo = new JSONObject(); //equivalent to FormData in JS
+                    //Inserting the values in JSON object
+                    try {
+                        if (resultData != null) {
+                            jo.put("url", resultData.get("secure_url"));
+                            jo.put("public_id", resultData.get("public_id"));
+                        } else {
+                            jo.put("url", "");
+                            jo.put("public_id", "");
+                        }
+                        jo.put("from", "android");
+                        jo.put("name", p_name.getText());
+                        jo.put("age", p_age.getText());
+                        jo.put("color", p_color.getText());
+                        jo.put("owner", qr_id);
+                        jo.put("gender", p_sex.getSelectedItem()).toString();
+                        jo.put("species", p_specie.getSelectedItem()).toString();
+                        jo.put("breed", p_breed.getText()).toString();
+
+                    } catch (JSONException jsonException) {
+                        jsonException.printStackTrace();
+                    }
+
+                    //create Volley Request
+                    RequestQueue requestQueue = Volley.newRequestQueue(edit_pet.this);
+
+                    //CALL SIGNUP API
+                    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PATCH, URLUpdate, jo, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Log.d("token", token);
+                            Intent petIntent = new Intent(edit_pet.this, my_pets.class);
+                            startActivity(petIntent);
 //                            mExampleList.clear();
 //                            mExampleAdapter.notifyDataSetChanged();
-                        Toast.makeText(getApplicationContext(), "Pet " + p_name.getText() + " Details Updated", Toast.LENGTH_LONG).show();
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("JSON Exception", String.valueOf(error));
-                    }
-                }) {
-                    @Override
-                    public Map<String, String> getHeaders() throws AuthFailureError {
-                        Map<String, String> params = new HashMap<String, String>();
-                        params.put("Authorization", "Bearer " + token);
-                        return params;
+                            Toast.makeText(getApplicationContext(), "Pet " + p_name.getText() + " Details Updated", Toast.LENGTH_LONG).show();
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Log.d("JSON Exception", String.valueOf(error));
+                        }
+                    }) {
+                        @Override
+                        public Map<String, String> getHeaders() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<String, String>();
+                            params.put("Authorization", "Bearer " + token);
+                            return params;
 
-                    }
-                };
+                        }
+                    };
 
-                //add request to queue
-                requestQueue.add(jsonObjectRequest);
+                    //add request to queue
+                    requestQueue.add(jsonObjectRequest);
+                }
+
+                @Override
+                public void onError(String requestId, ErrorInfo error) {
+                    Log.d(TAG, "onStart: " + error);
+                }
+
+                @Override
+                public void onReschedule(String requestId, ErrorInfo error) {
+                    Log.d(TAG, "onStart: " + error);
+                }
+            }).dispatch();
+        } else {
+            Log.d("token", token);
+            JSONObject jo = new JSONObject(); //equivalent to FormData in JS
+            //Inserting the values in JSON object
+            try {
+
+                jo.put("url", petImage);
+                jo.put("public_id", pubId);
+                jo.put("from", "android");
+                jo.put("name", p_name.getText());
+                jo.put("age", p_age.getText());
+                jo.put("color", p_color.getText());
+                jo.put("owner", qr_id);
+                jo.put("gender", p_sex.getSelectedItem()).toString();
+                jo.put("species", p_specie.getSelectedItem()).toString();
+                jo.put("breed", p_breed.getText()).toString();
+
+            } catch (JSONException jsonException) {
+                jsonException.printStackTrace();
             }
 
+            //create Volley Request
+            RequestQueue requestQueue = Volley.newRequestQueue(edit_pet.this);
+
+            //CALL SIGNUP API
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.PATCH, URLUpdate, jo, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    Log.d("token", token);
+                    Intent petIntent = new Intent(edit_pet.this, my_pets.class);
+                    startActivity(petIntent);
+//                            mExampleList.clear();
+//                            mExampleAdapter.notifyDataSetChanged();
+                    Toast.makeText(getApplicationContext(), "Pet " + p_name.getText() + " Details Updated", Toast.LENGTH_LONG).show();
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d("JSON Exception", String.valueOf(error));
+                }
+            }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<String, String>();
+                    params.put("Authorization", "Bearer " + token);
+                    return params;
+
+                }
+            };
+
+            //add request to queue
+            requestQueue.add(jsonObjectRequest);
         }
+
+    }
 
 
     /*

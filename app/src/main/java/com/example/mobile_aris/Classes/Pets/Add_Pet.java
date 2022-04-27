@@ -201,7 +201,7 @@ public class Add_Pet extends AppCompatActivity implements View.OnClickListener{
 
                 RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                        "http://192.168.100.32:5000/api/pet/add", jo, new Response.Listener<JSONObject>() {
+                        "https://aris-backend.herokuapp.com/api/pet/add", jo, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("token", token);
@@ -215,7 +215,7 @@ public class Add_Pet extends AppCompatActivity implements View.OnClickListener{
                         Log.d("Error is", String.valueOf(error));
                     }
                 })
-                    {
+                {
                     //This is for Headers If You Needed
                     @Override
                     public Map<String, String> getHeaders() throws AuthFailureError {
@@ -243,14 +243,19 @@ public class Add_Pet extends AppCompatActivity implements View.OnClickListener{
     public void postvaxx() {
         JSONObject jo = new JSONObject();
         try {
-            jo.put("vaccine_name", vname.getText().toString());
-            jo.put("date_of_vaccination", vdate.getText().toString());
+            if(vname != null) {
+                jo.put("vaccine_name", vname.getText().toString());
+                jo.put("date_of_vaccination", vdate.getText().toString());
+            }else{
+                jo.put("vaccine_name", "");
+                jo.put("date_of_vaccination", "");
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                "http://192.168.100.32:5000/api/petadd/vaxx-detail", jo, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/petadd/vaxx-detail", jo, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.d("Vaxx", "Added Successfully");

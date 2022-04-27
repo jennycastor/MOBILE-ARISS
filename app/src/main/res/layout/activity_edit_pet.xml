@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    tools:context="com.example.mobile_aris.Classes.Pets.my_pets">
+    tools:context="com.example.mobile_aris.Classes.Pets.edit_pet">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,6 +20,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/back"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/ic_baseline_west_24"
+                tools:ignore="SpeakableTextPresentCheck" />
+
     <!-- Circular Image View  -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_view_detail"
@@ -30,6 +39,7 @@
         android:src="@drawable/ic_profile"
         app:civ_border_color="#F41A1A"
         app:civ_border_width="4dp" />
+
 
     <TextView
         android:id="@+id/hint2"

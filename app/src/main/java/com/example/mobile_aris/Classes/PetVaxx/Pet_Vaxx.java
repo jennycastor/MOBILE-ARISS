@@ -1,10 +1,12 @@
-package com.example.mobile_aris.Classes;
+package com.example.mobile_aris.Classes.PetVaxx;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,11 +22,13 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mobile_aris.Adapter.VaxxAdapter;
 import com.example.mobile_aris.Classes.Appointments.Appointments;
+import com.example.mobile_aris.Classes.MainActivity;
 import com.example.mobile_aris.Classes.User.user_profile;
 import com.example.mobile_aris.R;
 import com.example.mobile_aris.bites.bite_cases;
 import com.example.mobile_aris.models.PetVaxxModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import org.json.JSONArray;
@@ -55,6 +59,25 @@ public class Pet_Vaxx extends AppCompatActivity {
         token= info.getString("access_token","");
         SharedPreferences pinfo = getSharedPreferences("petid",MODE_PRIVATE);
         id= pinfo.getString("pid","");
+
+        FloatingActionButton addVaxx;
+        addVaxx = findViewById(R.id.addPetVaxxx);
+
+        addVaxx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                AlertDialog.Builder builder=new AlertDialog.Builder(view.getRootView().getContext());
+//                View dialogView= LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.activity_add_pets,null);
+//
+//                builder.setView(dialogView);
+//                builder.setCancelable(true);
+//                builder.show();
+
+                Intent intent = new Intent ( Pet_Vaxx.this, Add_Vaxx.class);
+                startActivity(intent);
+            }
+        });
+
         getAll();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -99,7 +122,7 @@ public class Pet_Vaxx extends AppCompatActivity {
         Log.d("Token1", token);
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/pet/" + id, null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/pet/" + id, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
@@ -114,6 +137,7 @@ public class Pet_Vaxx extends AppCompatActivity {
 
 //                        JSONObject jsonObject1 = new JSONObject(jsonObject.getString("history_of_exposure"));
                             PetVaxxModel each = new PetVaxxModel(
+
                                     vacstat.getString("_id"),
                                     vacstat.getString("vaccine_name"),
                                     vacstat.getString("date_of_vaccination"),

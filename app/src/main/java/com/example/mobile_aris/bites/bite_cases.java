@@ -88,7 +88,7 @@ public class bite_cases extends AppCompatActivity {
     public void getAll() {
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/bitecase/get/" + id, null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/bitecase/get/" + id, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {

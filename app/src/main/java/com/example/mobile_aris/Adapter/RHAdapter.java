@@ -67,6 +67,16 @@ public class RHAdapter extends RecyclerView.Adapter<RHAdapter.ViewHolder>{
         Picasso.get().load(hrprt.get(position).getPhoto()).into(holder.g);
 //        holder.h.setText(holder.op + hrprt.get(position).getRole() + holder.cl);
         holder.i.setText(holder.type + hrprt.get(position).getBType());
+
+//        holder.j.setText(hrprt.get(position).getVday());
+//        try {
+//            holder.k.setText(hrprt.get(position).getVcdate().toString());
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//        holder.l.setText(hrprt.get(position).getVacc().toString());
+//        holder.m.setText(hrprt.get(position).getLot().toString());
+//        holder.n.setText(hrprt.get(position).getRem().toString());
     }
 
     @Override
@@ -76,7 +86,7 @@ public class RHAdapter extends RecyclerView.Adapter<RHAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public announcementModel mItem;
-        TextView a,b,c,d,e,f,h,i;
+        TextView a,b,c,d,e,f,h,i,j,k,l,m,n;
         String op,cl, desc, adname, adsent, sent,type,reply;
         ImageView g;
 
@@ -92,6 +102,11 @@ public class RHAdapter extends RecyclerView.Adapter<RHAdapter.ViewHolder>{
             g = (ImageView) ItemView.findViewById(R.id.upro);
 //            h = (TextView) ItemView.findViewById(R.id.role);
             i = (TextView) ItemView.findViewById(R.id.type);
+//            j = (TextView) ItemView.findViewById(R.id.d0);
+//            k = (TextView) ItemView.findViewById(R.id.dt0);
+//            l = (TextView) ItemView.findViewById(R.id.b0);
+//            m = (TextView) ItemView.findViewById(R.id.l0);
+//            n = (TextView) ItemView.findViewById(R.id.r0);
             op = (" ( ");
             cl = (" )");
             desc = ("Description: ");

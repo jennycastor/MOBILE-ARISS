@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,7 +26,6 @@ import com.example.mobile_aris.Adapter.PendingAdapter;
 import com.example.mobile_aris.Details.PendingDetailActivity;
 import com.example.mobile_aris.R;
 import com.example.mobile_aris.models.pendingModel;
-import com.example.mobile_aris.models.set_appointment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -106,18 +106,6 @@ public class Pending extends AppCompatActivity implements PendingAdapter.OnItemC
 //        setListeners();
         Pakita.show();
 
-//    }
-
-
-//    public void setListeners() {
-//        FloatingActionButton addPets;
-//        addPets = findViewById(R.id.addPets);
-//
-////        MaterialButton editPet;
-////        editPet = findViewById(R.id.editPet);
-//
-//        BottomNavigationView bottomNavigationView = Pakita.findViewById(R.id.bottom_navigation);
-//        bottomNavigationView.setSelectedItemId(R.id.appointments);
 
         FloatingActionButton SetAppointment;
 
@@ -127,44 +115,57 @@ public class Pending extends AppCompatActivity implements PendingAdapter.OnItemC
         SetAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent ( Pending.this, set_appointment.class);
-                startActivity(intent);
-            }
-        });
+                RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                        "https://aris-backend.herokuapp.com/api/appointments/check/eligibility", null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
 
-//        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                switch (item.getItemId()) {
-//                    case R.id.home:
-//                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.appointments:
-//                        return true;
-//                    case R.id.bitecases:
-//                        startActivity(new Intent(getApplicationContext(), bite_cases.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//
-//                    case R.id.profile:
-//                        startActivity(new Intent(getApplicationContext(), user_profile.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.mypets:
-//                        startActivity(new Intent(getApplicationContext(), my_pets.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                }
-//                return false;
-//            }
-//        });
+//                            JSONObject data = response.getJSONObject("eligibility");
+//                            for (int i = 0; i < data.length(); i++) {
+//                                JSONObject jsonObject = data.getJSONObject(i);
+
+                            String elg = response.getString("eligibility");
+
+                            if (elg == "true") {
+                                Intent intent = new Intent(Pending.this, set_appointment.class);
+                                startActivity(intent);
+                            }else{
+                                Toast.makeText(getApplicationContext(), "You exceeded the number of cancelled Appointments within 5 days. You are not eligible to request for one", Toast.LENGTH_LONG).show();
+                                Log.d("eligib", elg);
+                            }
+
+                        } catch (JSONException jsonException) {
+                            jsonException.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("JSON Exception", String.valueOf(error));
+                    }
+                }){
+
+                    //This is for Headers If You Needed
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("Authorization", "Bearer " + token);
+                        return params;
+                    }
+                };
+                requestQueue.add(jsonObjectRequest);
+            }
+
+        });
     }
+
 
 
     private void parseJSON() {
         mExampleList.clear();
-        String url = "http://192.168.100.32:5000/api/appointments/get/my-appointments";
+        String url = "https://aris-backend.herokuapp.com/api/appointments/get/my-appointments";
 
         JSONObject ji = new JSONObject();
         try {

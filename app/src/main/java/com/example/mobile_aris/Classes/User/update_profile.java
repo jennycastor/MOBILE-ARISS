@@ -298,7 +298,7 @@ public class update_profile extends AppCompatActivity implements View.OnClickLis
                 String pub_id = info.getString("public_id", "").toString();
                 String prof_url = info.getString("profile_url", "").toString();
                 String pass = info.getString("password", " ").toString();
-                final String URLUpdate = "http://192.168.100.32:5000/api/user/auth/update_profile/" + user_id;
+                final String URLUpdate = "https://aris-backend.herokuapp.com/api/user/auth/update_profile/" + user_id;
 //                String pass1, pass2;
 //                pass1 = edit_new_password.getText().toString();
 //                pass2 = edit_confirm_password.getText().toString();
@@ -558,7 +558,7 @@ public class update_profile extends AppCompatActivity implements View.OnClickLis
                 String user_id = info.getString("_id", "").toString();
 //                String pass = info.getString("password", " ").toString();
 //                Log.d(TAG, "onStart: " + pass);
-                final String URLUpdatePass = "http://192.168.100.32:5000/api/user/auth/update_password/" + user_id;
+                final String URLUpdatePass = "https://aris-backend.herokuapp.com/api/user/auth/update_password/" + user_id;
                 String pass1, pass2, old_pass;
 //                EditText old_pass = v.findViewById(R.id.edit_old_password);
                 old_pass = edit_old_password.getText().toString();

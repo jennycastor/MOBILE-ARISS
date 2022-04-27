@@ -20,6 +20,7 @@ import com.example.mobile_aris.R;
 import com.example.mobile_aris.models.announcementModel;
 import com.example.mobile_aris.models.bite;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class biteAdpater  extends RecyclerView.Adapter<biteAdpater.ViewHolder>{
@@ -58,7 +59,11 @@ public class biteAdpater  extends RecyclerView.Adapter<biteAdpater.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.a.setText(holder.bno + String.valueOf(bitemodel.get(position).getBite_case_no()));
         holder.b.setText(holder.loc + bitemodel.get(position).getLocation().toString());
-        holder.c.setText(holder.date + bitemodel.get(position).getCreatedAt().toString());
+        try {
+            holder.c.setText(holder.date + bitemodel.get(position).getCreatedAt().toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         holder.d.setText(holder.cat + bitemodel.get(position).getExposure_category().toString());
         holder.e.setText(holder.stat + bitemodel.get(position).getStatus_of_vaccination().toString());
 
@@ -70,8 +75,8 @@ public class biteAdpater  extends RecyclerView.Adapter<biteAdpater.ViewHolder>{
                 intent.putExtra("user", bitemodel.get(position).getUser_id().toString());
                 intent.putExtra("clinic", bitemodel.get(position).getCliID().toString());
 
-                AlertDialog.Builder builder=new AlertDialog.Builder(view.getRootView().getContext());
-                View dialogView= LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.activity_edit_pet,null);
+//                AlertDialog.Builder builder=new AlertDialog.Builder(view.getRootView().getContext());
+//                View dialogView= LayoutInflater.from(view.getRootView().getContext()).inflate(R.layout.activity_edit_pet,null);
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
@@ -99,6 +104,7 @@ public class biteAdpater  extends RecyclerView.Adapter<biteAdpater.ViewHolder>{
             d = (TextView) ItemView.findViewById(R.id.cat);
             e = (TextView) ItemView.findViewById(R.id.stat);
             f = (CardView) ItemView.findViewById(R.id.bite_card);
+            e = (TextView) ItemView.findViewById(R.id.stat);
             bno = ("Bite Case No. ");
             loc = ("Location: ");
             date = ("Date: ");

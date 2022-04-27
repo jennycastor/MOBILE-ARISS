@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.mobile_aris.Classes.Pet_Vaxx">
+    tools:context="com.example.mobile_aris.Classes.PetVaxx.Add_Vaxx">
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -39,6 +39,24 @@
         <!--        android:layout_marginBottom="80dp"-->
         <!--        android:text="Add Pets" />-->
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPetVaxxx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#FF808A"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

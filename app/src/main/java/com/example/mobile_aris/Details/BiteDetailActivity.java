@@ -1,7 +1,9 @@
 package com.example.mobile_aris.Details;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,33 +26,53 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.mobile_aris.Adapter.RHAdapter;
+import com.example.mobile_aris.Classes.PetVaxx.Edit_Vaxx;
+import com.example.mobile_aris.Classes.PetVaxx.Pet_Vaxx;
+import com.example.mobile_aris.Classes.Uservaxx;
 import com.example.mobile_aris.R;
 import com.example.mobile_aris.bites.hreport;
+import com.example.mobile_aris.models.UserVaxxModel;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class BiteDetailActivity extends AppCompatActivity {
     String _id,user,clinic;
-    TextView a,b,c,d,e,f,g;
+    TextView a,b,c,d,e,f,g,j,k,l,m,n;
     ImageView img;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView, rw;
     RHAdapter rhAdapter;
     ArrayList<hreport> hreports = new ArrayList<hreport>();
-    Button report;
+    Button report, uvaxx;
     RadioButton a1,a2,a3;
-    String type;
+    String type, token;
+    SharedPreferences vaxx;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bite_case_file);
         Intent here = getIntent();
+
+        SharedPreferences info =getSharedPreferences("user_info",MODE_PRIVATE);
+        token= info.getString("access_token","");
+
+        SharedPreferences vaxx = BiteDetailActivity.this.getSharedPreferences("vaxx", Context.MODE_PRIVATE);
+        SharedPreferences.Editor vaxxx = vaxx.edit();
+
+        vaxxx.putString("_id", _id);
+
+        vaxxx.apply();
 
         _id = here.getStringExtra("_id");
         user = here.getStringExtra("user");
@@ -65,10 +87,17 @@ public class BiteDetailActivity extends AppCompatActivity {
         e = findViewById(R.id.VaccinationStatus);
         f = findViewById(R.id.biteCaseStatus2);
         g = findViewById(R.id.bodypart);
+//        j = findViewById(R.id.dt0);
+//        k = (TextView) findViewById(R.id.dt3);
+//        l = (TextView) findViewById(R.id.dt7);
+//        m = (TextView) findViewById(R.id.dt14);
+//        n = (TextView) findViewById(R.id.dt28);
         img =findViewById(R.id.qrcode);
         String qr = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + _id;
         Picasso.get().load(qr).into(img);
+
         report = findViewById(R.id.SendHealthReport);
+        uvaxx = findViewById(R.id.usvaxx);
 
         recyclerView = findViewById(R.id.r_health_report);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -77,7 +106,22 @@ public class BiteDetailActivity extends AppCompatActivity {
 
         getval();
 
-        report.setOnClickListener(new View.OnClickListener() {
+        uvaxx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Dialog Pakita = new Dialog(BiteDetailActivity.this);
+//                Pakita.setContentView(R.layout.rec_uservaxx);
+//                Pakita.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//
+//                Pakita.show();
+
+                Intent detailIntent = new Intent(BiteDetailActivity.this, Uservaxx.class);
+                startActivity(detailIntent);
+                BiteDetailActivity.this.finish();
+            }
+        });
+
+                report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Dialog Pakita = new Dialog(BiteDetailActivity.this);
@@ -112,7 +156,7 @@ public class BiteDetailActivity extends AppCompatActivity {
 
                         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, "http://192.168.100.32:5000/api/bitecase/file/report/", jsonitem, new Response.Listener<JSONObject>() {
+                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, "https://aris-backend.herokuapp.com/api/bitecase/file/report/", jsonitem, new Response.Listener<JSONObject>() {
                             public void onResponse(JSONObject response) {
                                 try {
                                     String message = response.getString("success");
@@ -129,10 +173,12 @@ public class BiteDetailActivity extends AppCompatActivity {
                                 Log.d("JSON Exception", String.valueOf(error));
                             }
                         }) {
+
+                            //This is for Headers If You Needed
                             @Override
                             public Map<String, String> getHeaders() throws AuthFailureError {
-                                Map<String, String> params = new HashMap<>();
-                                params.put("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjM4ZWM2MzU1Nzk1NGQyZWExZWU0NSIsImlhdCI6MTY0ODEwOTUyMCwiZXhwIjoxNjQ4NTQxNTIwfQ.TWJ0LfeE0V8v48DojVJmxrYVrdyliYDD8WNCZLMUa0Q");
+                                Map<String, String> params = new HashMap<String, String>();
+                                params.put("Authorization", "Bearer " + token);
                                 return params;
                             }
                         };
@@ -152,14 +198,21 @@ public class BiteDetailActivity extends AppCompatActivity {
         //history of exposure
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/bitecase/get/bite/"+ _id, null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/bitecase/get/bite/"+ _id, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
                     JSONObject data = response.getJSONObject("bite");
                     JSONObject jsonObject1 = new JSONObject(data.getString("history_of_exposure"));
 
-                    a.setText("Date of Exposure: "+ jsonObject1.getString("date"));
+                    DateFormat outputFormat = new SimpleDateFormat("MMM. dd, yyy", Locale.US);
+                    DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", Locale.US);
+
+                    String inputT = jsonObject1.getString("date");
+                    Date date = inputFormat.parse(inputT);
+                    String outputT = outputFormat.format(date);
+
+                    a.setText("Date of Exposure: "+ outputT);
                     b.setText("Place of Incedent: "+ jsonObject1.getString("place"));
                     c.setText("Type of Exposure: "+ jsonObject1.getString("type_of_exposure"));
                     d.setText("Exposure Category: "+ data.getString("exposure_category"));
@@ -168,7 +221,7 @@ public class BiteDetailActivity extends AppCompatActivity {
                     g.setText("Body Part Affected: "+ jsonObject1.getString("bodypart"));
 
 
-                } catch (JSONException e) {
+                } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                 }
             }
@@ -183,8 +236,7 @@ public class BiteDetailActivity extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization",
-                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzE2M2Q0MjU5ZDhkOTE2NTg4MTE3NiIsImlhdCI6MTY0OTI0NTIyOSwiZXhwIjoxNjQ5Njc3MjI5fQ.Ia5trMMzwuux8ioa9fYtfkFEmMGtJb4OZftvwTJCraI");
+                params.put("Authorization", "Bearer " + token);
                 return params;
             }
         };
@@ -216,56 +268,75 @@ public class BiteDetailActivity extends AppCompatActivity {
     public void getval(){
         RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.100.32:5000/api/bitecase/post-vaxx/get/bitecase/"+ _id, null, new Response.Listener<JSONObject>() {
+                "https://aris-backend.herokuapp.com/api/bitecase/post-vaxx/get/bitecase/" + _id, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
 
                     JSONObject data = new JSONObject(response.getString("details"));
                     JSONArray rprt = new JSONArray(data.getString("report"));
+//                    JSONArray uv = new JSONArray(data.getString("vaxx"));
                     for (int i = 0; i < rprt.length(); i++) {
                         String name = "";
                         JSONObject rh = rprt.getJSONObject(i);
 //                        JSONArray user = new JSONArray(rh.getString("user"));
                         JSONArray user = rh.getJSONArray("user");
-                                Log.d("user_length", String.valueOf(user.length()));
+//                        JSONArray uv = rh.getJSONArray("vaxx");
+                        Log.d("user_length", String.valueOf(user.length()));
                         JSONObject userobj = user.getJSONObject(0);
                         JSONObject userdetails = user.getJSONObject(0);
                         JSONObject pic = new JSONObject(userdetails.getString("avatar"));
-//                        Toast.makeText(BiteDetailActivity.this, "here"+pic.getString("url"), Toast.LENGTH_SHORT).show();
+//                        JSONArray uv = new JSONArray(data.getString("vaxx"));
+//                        JSONObject uservaxx = uv.getJSONObject(0);
+//                        JSONArray vadm = new JSONArray(uservaxx.getString("admin"));
+//                        Log.d("user_vaxx", String.valueOf(uv));
+
 
                         JSONArray reply = rh.getJSONArray("reply");
                         Log.d("reply_length", String.valueOf(reply.length()));
                         for (int n = 0; n < reply.length(); n++) {
                             JSONObject vacstat = reply.getJSONObject(n);
 
-                            JSONArray admin = rh.getJSONArray("admin");
-                            Log.d("admin_length", String.valueOf(admin.length()));
-                            for (int j = 0; j < admin.length(); j++) {
-                                JSONObject adm = admin.getJSONObject(n);
+                            JSONArray vaxx = data.getJSONArray("vaxx");
 
-                                name = userobj.getString("first_name") + " " + userobj.getString("last_name");
-                                hreport each = new hreport(
-                                        name,
-                                        pic.getString("url"),
-                                        rh.getString("type"),
-                                        rh.getString("description"),
-                                        rh.getString("createdAt"),
-                                        adm.getString("admin_name"),
-                                        vacstat.getString("text"),
-                                        vacstat.getString("createdAt"),
-                                        adm.getString("role"),
-                                        rh.getString("type")
+//                        JSONObject uservaxx = vaxx.getJSONObject(0);
+                            Log.d("vaxx_length", String.valueOf(vaxx.length()));
+                            for (int v = 0; v < vaxx.length(); v++) {
+                                JSONObject vacx = vaxx.getJSONObject(v);
 
-                                );
-                                hreports.add(each);
+
+                                JSONArray admin = rh.getJSONArray("admin");
+                                Log.d("admin_length", String.valueOf(admin.length()));
+                                for (int j = 0; j < admin.length(); j++) {
+                                    JSONObject adm = admin.getJSONObject(j);
+
+                                    name = userobj.getString("first_name") + " " + userobj.getString("last_name");
+                                    hreport each = new hreport(
+                                            name,
+                                            pic.getString("url"),
+                                            rh.getString("type"),
+                                            rh.getString("description"),
+                                            rh.getString("createdAt"),
+                                            adm.getString("admin_name"),
+                                            vacstat.getString("text"),
+                                            vacstat.getString("createdAt"),
+                                            adm.getString("role"),
+                                            rh.getString("type"),
+                                            vacx.getString("day"),
+                                            vacx.getString("date_injected"),
+                                            vacx.getString("vaccine"),
+                                            vacx.getString("lot"),
+                                            vacx.getString("remarks")
+
+                                    );
+                                    hreports.add(each);
+                                }
                             }
                         }
-                    }
+
+                        }
 
                     rhAdapter.setmValues(hreports);
-
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -282,13 +353,11 @@ public class BiteDetailActivity extends AppCompatActivity {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization",
-                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzE2M2Q0MjU5ZDhkOTE2NTg4MTE3NiIsImlhdCI6MTY0OTI0NTIyOSwiZXhwIjoxNjQ5Njc3MjI5fQ.Ia5trMMzwuux8ioa9fYtfkFEmMGtJb4OZftvwTJCraI");
+                params.put("Authorization", "Bearer " + token);
                 return params;
             }
         };
         requestQueue.add(jsonObjectRequest);
     }
-
 
 }

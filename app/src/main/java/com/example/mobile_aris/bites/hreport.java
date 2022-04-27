@@ -9,8 +9,9 @@ import java.util.Locale;
 public class hreport {
     String username,photo,type,description, r_createdAt;
     String admin,text,createdAt, role, btype;
+    String day, date_injected, vaccine, lot, admin_name, remarks;
 
-    public hreport(String name, String photo, String type, String description, String r_createdAt, String admin, String text, String createdAt, String role, String btype) {
+    public hreport(String name, String photo, String type, String description, String r_createdAt, String admin, String text, String createdAt, String role, String btype, String day, String date_injected, String vaccine, String lot, String remarks) {
         this.username = name;
         this.type = type;
         this.description = description;
@@ -21,7 +22,13 @@ public class hreport {
         this.photo = photo;
         this.role = role;
         this.btype = btype;
+        this.day = day;
+        this.date_injected = date_injected;
+        this.vaccine = vaccine;
+        this.lot = lot;
+        this.remarks = remarks;
     }
+
 
     public String getUsername() {
         return username;
@@ -115,5 +122,59 @@ public class hreport {
 
     public void setBtype(String btype) {
         this.text = btype;
+    }
+
+    public String getVday() {
+        return day;
+    }
+
+    public void setVady(String day) {
+        this.day = day;
+    }
+
+    public String getVcdate() throws ParseException {
+        DateFormat outputFormat = new SimpleDateFormat("MMM. dd, yyy", Locale.US);
+        DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", Locale.US);
+
+        String inputT = date_injected;
+        Date date = inputFormat.parse(inputT);
+        String outputT = outputFormat.format(date);
+        return outputT;
+    }
+
+    public void setVcdate(String date_injected) {
+        this.date_injected = date_injected;
+    }
+
+    public String getVacc() {
+        return vaccine;
+    }
+
+    public void setVacc(String vaccine) {
+        this.vaccine = vaccine;
+    }
+
+    public String getLot() {
+        return lot;
+    }
+
+    public void setLot(String lot) {
+        this.lot = lot;
+    }
+
+    public String getUadm() {
+        return admin_name;
+    }
+
+    public void setUadm(String admin_name) {
+        this.admin_name = admin_name;
+    }
+
+    public String getRem() {
+        return remarks;
+    }
+
+    public void setRem(String remarks) {
+        this.remarks = remarks;
     }
 }

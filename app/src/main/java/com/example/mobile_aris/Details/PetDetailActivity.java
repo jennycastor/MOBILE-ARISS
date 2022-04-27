@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mobile_aris.Classes.Pet_Vaxx;
+import com.example.mobile_aris.Classes.PetVaxx.Pet_Vaxx;
 import com.example.mobile_aris.Classes.Pets.my_pets;
 import com.example.mobile_aris.R;
 import com.squareup.picasso.Picasso;

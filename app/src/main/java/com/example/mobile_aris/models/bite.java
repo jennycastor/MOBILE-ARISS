@@ -4,6 +4,12 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class bite {
     String location, createdAt, status_of_vaccination, patient_status, vaccine, classification, _id ,clinic_id,user_id, cliID;
 
@@ -33,11 +39,14 @@ public class bite {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public String getCreatedAt() {
-//        LocalDate new_date = LocalDate.parse(createdAt, DateTimeFormatter.ofPattern("MM-dd-yyyy"));
-//        DateTimeFormatter date = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-//        createdAt.format(String.valueOf(date));
-        return createdAt;
+    public String getCreatedAt() throws ParseException {
+        DateFormat outputFormat = new SimpleDateFormat("MMM. dd, yyy", Locale.US);
+        DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", Locale.US);
+
+        String inputT = createdAt;
+        Date date = inputFormat.parse(inputT);
+        String outputT = outputFormat.format(date);
+        return outputT;
     }
 
     public void setCreatedAt(String createdAt) {

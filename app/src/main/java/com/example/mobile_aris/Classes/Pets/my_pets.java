@@ -61,7 +61,7 @@ public class my_pets extends AppCompatActivity implements MypetRecyclerViewAdapt
     private SwipeRefreshLayout refreshLayout;
     private RecyclerView mRecyclerView;
     private MypetRecyclerViewAdapter mExampleAdapter;
-//    private EditpetRecyclerViewAdapter mEditAdapter;
+    //    private EditpetRecyclerViewAdapter mEditAdapter;
     private ArrayList<petModel> mExampleList;
     private RequestQueue mRequestQueue;
 
@@ -141,37 +141,37 @@ public class my_pets extends AppCompatActivity implements MypetRecyclerViewAdapt
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    switch (item.getItemId()) {
-                        case R.id.home:
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        case R.id.appointments:
-                            startActivity(new Intent(getApplicationContext(), Appointments.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        case R.id.bitecases:
-                            startActivity(new Intent(getApplicationContext(), bite_cases.class));
-                            overridePendingTransition(0,0);
-                            return true;
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.appointments:
+                        startActivity(new Intent(getApplicationContext(), Appointments.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.bitecases:
+                        startActivity(new Intent(getApplicationContext(), bite_cases.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
-                        case R.id.profile:
-                            startActivity(new Intent(getApplicationContext(), user_profile.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        case R.id.mypets:
-                            return true;
-                    }
-                    return false;
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), user_profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.mypets:
+                        return true;
                 }
-            });
+                return false;
+            }
+        });
     }
 
 
     private void parseJSON() {
         mExampleList.clear();
-        String url = "http://192.168.100.32:5000/api/pet/";
+        String url = "https://aris-backend.herokuapp.com/api/pet/";
 
         JSONObject ji = new JSONObject();
         try {
@@ -196,25 +196,25 @@ public class my_pets extends AppCompatActivity implements MypetRecyclerViewAdapt
 //                                JSONArray vacc = hit.getJSONArray("vaccine_history");
 //                                JSONObject vacstat = vacc.getJSONObject(0);
 
-                                    String petId = hit.getString("_id");
-                                    String petName = hit.getString("name");
-                                    String imageUrl = imageObject.getString("url");
-                                    String pub_id = imageObject.getString("public_id");
-                                    int age = hit.getInt("age");
-                                    String gender = hit.getString("gender");
-                                    String specie = hit.getString("species");
-                                    String breed = hit.getString("breed");
-                                    String color = hit.getString("color");
-                                    String date = hit.getString("created_at");
+                                String petId = hit.getString("_id");
+                                String petName = hit.getString("name");
+                                String imageUrl = imageObject.getString("url");
+                                String pub_id = imageObject.getString("public_id");
+                                int age = hit.getInt("age");
+                                String gender = hit.getString("gender");
+                                String specie = hit.getString("species");
+                                String breed = hit.getString("breed");
+                                String color = hit.getString("color");
+                                String date = hit.getString("created_at");
 
 
 //                                String vacname = vacstat.getString("vaccine_name");
 //                                String vacdate = vacstat.getString("date_of_vaccination");
 //                                String revac = vacstat.getString("revaccination_schedule");
 
-                                    mExampleList.add(new petModel(petId, imageUrl, pub_id, petName, age, date, gender, specie, breed, color));
+                                mExampleList.add(new petModel(petId, imageUrl, pub_id, petName, age, date, gender, specie, breed, color));
 //                                edit.apply();
-                                }
+                            }
 
 
 
@@ -258,7 +258,7 @@ public class my_pets extends AppCompatActivity implements MypetRecyclerViewAdapt
 
     private void VaxxDet() {
         mExampleList.clear();
-        String url = "http://192.168.100.32:5000/api/pet/";
+        String url = "https://aris-backend.herokuapp.com/api/pet/";
 
         JSONObject ji = new JSONObject();
         try {
@@ -284,11 +284,11 @@ public class my_pets extends AppCompatActivity implements MypetRecyclerViewAdapt
 
 //                                    if (vacc != null) {
 
-                                        String vacname = vacstat.getString("vaccine_name");
-                                        String vacdate = vacstat.getString("date_of_vaccination");
-                                        String revac = vacstat.getString("revaccination_schedule");
+                                    String vacname = vacstat.getString("vaccine_name");
+                                    String vacdate = vacstat.getString("date_of_vaccination");
+                                    String revac = vacstat.getString("revaccination_schedule");
 
-                                        mExampleList.add(new petModel(vacname, vacdate, revac));
+                                    mExampleList.add(new petModel(vacname, vacdate, revac));
 //                                edit.apply();
 //                                    } else {
 //                                        String vacname = "";

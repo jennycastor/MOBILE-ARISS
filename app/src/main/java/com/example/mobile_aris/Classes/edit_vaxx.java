@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.mobile_aris.Classes.PetVaxx.Pet_Vaxx;
 import com.example.mobile_aris.R;
 
 import org.json.JSONException;
@@ -74,7 +75,7 @@ public class edit_vaxx extends AppCompatActivity {
                 }
                 RequestQueue requestQueue= Volley.newRequestQueue(getApplicationContext());
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-                        "http://192.168.100.32:5000/api/pet/update/vaxx-detail", jo, new Response.Listener<JSONObject>() {
+                        "https://aris-backend.herokuapp.com/api/pet/update/vaxx-detail", jo, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d("Vaxx", "Added Successfully");
